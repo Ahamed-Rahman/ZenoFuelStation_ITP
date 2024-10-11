@@ -1,0 +1,52 @@
+/* AdminLeaveTable.module.css */
+.adminLeaveTableContainer {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.adminLeaveTableContainer h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.leaveTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leaveTable th, .leaveTable td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.leaveTable th {
+  background-color: #4CAF50; /* Green background for header */
+  color: white;
+}
+
+.leaveTable tr:nth-child(even) {
+  background-color: #f2f2f2; /* Zebra striping for even rows */
+}
+
+.leaveTable tr:hover {
+  background-color: #ddd; /* Highlight row on hover */
+}
+
+.leaveTable button {
+  padding: 8px 12px;
+  background-color: #4CAF50; /* Green background for buttons */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.leaveTable button:disabled {
+  background-color: #ccc; /* Grey background for disabled buttons */
+  cursor: not-allowed;
+}

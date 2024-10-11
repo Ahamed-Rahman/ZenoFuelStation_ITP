@@ -1,0 +1,256 @@
+/* Supplier Management Container */
+.main-contents-supplier {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%; /* Full width of the viewport */
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+.supplier-management h2 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  color: #050f42;
+  text-align: center;
+  font-weight: bold;
+}
+
+.containers-supplier {
+  width: 75%; /* Matches the table width */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -8px;
+}
+
+/* Container for the Search Bar and Add Supplier Button */
+.search-bar-container-supplier {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  margin-left: -380px;
+  margin-top: 25px;
+  
+ 
+}
+
+.search-bar-supplier {
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #4c1313;
+  font-size: 10px;
+  outline: none;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 10px;
+
+}
+
+.create-actions-supplier {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+  margin-right: -460px;
+}
+
+.create-supplier-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.create-supplier-button:hover {
+  background-color: #3b3d9e;
+}
+
+/* Supplier List */
+.supplier-list {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.supplier-list table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.supplier-list th, 
+.supplier-list td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.supplier-list th {
+  background-color: #90b2d3;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.supplier-list td {
+  font-size: 14px;
+  color: #555;
+}
+
+.supplier-list tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.supplier-list tr:hover {
+  background-color: #f1f1f1;
+}
+
+
+
+
+
+.supplier-list button:last-child:hover {
+  background-color: #c62828;
+}
+
+.delete-button-supplier {
+  background-color: #dc3545;
+  color: white;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 13px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.delete-button-supplier:hover {
+  background-color: #c82333;
+}
+
+.delete-button-supplier:active {
+  transform: scale(0.98);
+}
+
+.edit-button-supplier {
+  background-color: #007bff;
+  color: white;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 13px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.edit-button-supplier:hover {
+  background-color: #0056b3;
+}
+
+.edit-button-supplier:active {
+  transform: scale(0.98);
+}
+/* Generate Report Button */
+.generate-report-container-supplier {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  margin-right: -970px;
+}
+
+.generate-report-button-supplier {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  font-size: 13px;
+}
+
+.generate-report-button-supplier:hover {
+  background-color: #3b3d9e;
+}
+
+/* Form Overlay */
+.form-overlay-supplier {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.79);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.supplier-form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.supplier-form h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.supplier-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.supplier-form input[type="email"]{
+  width: 95%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.supplier-form button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #464ff8;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+ 
+}
+
+.supplier-form button:hover {
+  background-color: #3b3d9e;
+}
+
+.supplier-form button:last-child {
+  background-color: #f44336;
+}
+
+.supplier-form button:last-child:hover {
+  background-color: #c62828;
+}

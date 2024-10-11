@@ -1,0 +1,90 @@
+.NiflaleaveContainer {
+    max-width: 570px;
+    margin: 0 auto;
+    padding: 40px;
+    margin-top: 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    height: 600px;
+  }
+  
+  .NiflaleaveContainerhead {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .leaveContainer form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .NiflaSubmitContainer2{
+    background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    width: 200px;
+    margin-left: 190px;
+
+  }
+  
+
+   .NiflaSubmitContainer3{
+    background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    width: 200px;
+    margin-left: 190px;
+    margin-top: 20px;
+
+  }
+ 
+ 
+  
+.NiflaleaveContainer1{
+    width: 550px;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .NiflaleaveContainer2{
+    width: 557px;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .NiflaleaveContainer3{
+    width: 575px;
+    padding: 12px;
+    margin-top: 2px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  
+  .leaveContainer button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .leaveContainer button:hover {
+    background-color: #0056b3;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 10px;
+  }
+  

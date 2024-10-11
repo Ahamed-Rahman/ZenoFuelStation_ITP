@@ -1,0 +1,62 @@
+/* General container for the form */
+.Supplier {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form labels */
+  form label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  /* Form inputs */
+  .SupplierText {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  
+  .SupplierText:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Button styles */
+  .SupplierBtn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .SupplierBtn:hover {
+    background-color: #0056b3;
+  }
+  
+ 
+  
+  /* Media Queries for Mobile Responsiveness */
+  @media (max-width: 600px) {
+    form {
+      width: 90%;
+    }
+  }
+  

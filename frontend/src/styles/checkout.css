@@ -1,0 +1,77 @@
+.past-sales-container {
+    padding: 20px;
+    background-color: #80c1f2;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.past-sales-title {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.loading-message, .error-message {
+    font-size: 1.2em;
+    color: #777;
+}
+
+.sales-table {
+    width: 900px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-left: 250px;
+}
+
+.table-header {
+    background-color: #007bff;
+    color: white;
+}
+
+.table-header-cell {
+    padding: 12px;
+    text-align: left;
+}
+
+.table-body {
+    background-color: #fff;
+}
+
+.sales-row {
+    transition: background-color 0.3s;
+}
+
+.sales-row:hover {
+    background-color: #f1f1f1;
+}
+
+.sales-cell {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.no-orders-row {
+    text-align: center;
+}
+
+.no-orders-message {
+    font-style: italic;
+    color: #888;
+}
+
+.back-button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 200px;
+    margin-left: 250px;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,122 @@
+/* AdminWelcome container */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+.admin-welcome-page {
+    position: relative; /* Ensure positioning context for overlay */
+   
+}
+
+/* Container for image and overlay */
+.image-container {
+    position: relative; /* Establish context for overlay */
+    margin-bottom: 20px; /* Space below the image */
+}
+
+/* Welcome overlay */
+.welcome-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent overlay */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px; /* Match the image corners */
+    z-index: 1; /* Ensure it's above the image */
+}
+
+/* Heading and text within the overlay */
+.welcome-text {
+    text-align: center;
+    max-width: 900px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.welcome-text h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.welcome-text p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Image at the top */
+.admin-welcome-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    height: 620px;
+}
+.admin-welcome-page {
+    padding: 80px;
+}
+
+/* Container for the blocks */
+.admin-welcome-container {
+    padding: 20px;
+}
+
+/* Blocks container */
+.blocks-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Individual block style */
+.block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.block:hover {
+    transform: translateY(-5px);
+}
+
+/* Image inside the block */
+.block img {
+    width: 120px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+/* Block title */
+.block-title {
+    font-size: 1em;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Colors for each block */
+.block.staff { background-color: #0b3868; }
+.block.supplier { background-color: #0b3868; }
+.block.inventory { background-color: #0b3868; }
+.block.sales { background-color: #0b3868; }
+.block.attendance { background-color:#0b3868; }
+.block.order { background-color: #0b3868; }
+.block.promotions { background-color: #0b3868; }
+.block.salary { background-color: #0b3868; }

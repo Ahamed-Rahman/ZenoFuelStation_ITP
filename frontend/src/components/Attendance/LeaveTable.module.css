@@ -1,0 +1,177 @@
+
+.leaveTableContainer {
+  padding: 20px;
+  position: relative;
+}
+
+  .managerleaveTable {
+    width: 1000px;
+    border-collapse: collapse;
+    margin-top: 4px;
+    margin-left: 280px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 60px;
+    }
+    
+    .NiflaRecords{
+      text-align: center;
+      margin-top: 50px;
+    
+      
+    }
+
+    .NiflaLeaveEdit{
+      background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+      border: none;
+      padding: 8px;
+      color: white;
+      border-radius: 6px;
+      width: 60px;
+    }
+
+    .NiflaLeaveDelete{
+      background-color: red;
+      border: none;
+      padding: 8px;
+      color: white;
+      border-radius: 6px;
+      width: 60px;
+    }
+    
+    .managerleaveTable th, .table td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      color: rgb(23, 39, 49);
+      font-size: 14px;
+    }
+    
+    .managerleaveTable th {
+      background-color: #bfd5eb; /* Bluish Ash */
+      color: rgb(23, 39, 49);
+      font-size: 14px;
+      text-align: center;
+    }
+    
+    .managerleaveTable td {
+     text-align: center;
+     padding: 10px;
+     
+    }
+  
+  .leaveTable button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .leaveTable button:hover {
+    background-color: #0056b3;
+  }
+  
+
+/* Add this for blurring the background when the edit form is active */
+.blurred {
+  filter: blur(5px);
+}
+
+/* Edit form styling */
+.NiflaeditForm {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 400px;
+  border-radius: 8px;
+}
+
+.NiflaeditForm h3 {
+  margin-bottom: 20px;
+}
+
+.NiflaeditForm label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+
+.NiflaeditForm2{
+  width: 400px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.NiflaeditForm3{
+  width: 380px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.NiflaeditForm4{
+  width: 380px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.NiflaeditForm5{
+  width: 380px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+
+.UpdateNiflaeditForm4{
+  background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+  border: none;
+  padding: 6px;
+  color: white;
+  border-radius: 10px;
+  width: 100px;
+}
+
+.CancelNiflaeditForm4{
+  background-color: rgb(129, 26, 26);
+  border: none;
+  padding: 6px;
+  color: white;
+  border-radius: 10px;
+  width: 100px;
+  margin-left: 199px;
+}
+
+
+
+.NiflaeditForm button[type="button"] {
+  background-color: #f44336;
+  color: white;
+  border: none;
+}
+
+/* Overlay to darken the background */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}

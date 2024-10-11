@@ -1,0 +1,60 @@
+.salesRecordsPage {
+    padding: 20px;
+    background: rgb(149, 197, 241);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #050f42;
+    font-size: 30px;
+}
+
+.recordsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recordsTable th, .recordsTable td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.recordsTable th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.recordsTable tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.recordsTable tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.deleteButton {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.deleteButton:hover {
+    background-color: #c0392b;
+}
+
+.errorMessage {
+    color: #e74c3c;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}

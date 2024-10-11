@@ -1,0 +1,45 @@
+/* frontend/src/styles/Dashboard.module.css */
+
+.AhameddashboardContainers {
+    z-index: 1;
+   
+}
+
+.AhamedpageTitle {
+    margin-bottom: 20px;
+    text-align: center;
+    margin-left: 296px;
+}
+
+/* frontend/src/styles/Dashboard.module.css */
+
+.AhamedchartsWrapper {
+    display: flex;
+    
+    justify-content: space-evenly; /* Ensure even spacing */
+    flex-wrap: nowrap; /* Prevent charts from wrapping */
+    width: 100%; /* Full width of the container */
+    margin: 0 auto;
+}
+
+.AhamedchartS {
+    flex: 1;
+    width: 500px;
+    max-width: 590px; /* Limit each chart's width */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 425px;
+    margin-left: 290px;
+}
+
+.Ahamedchart {
+    flex: 1;
+    max-width: 400px; /* Limit each chart's width */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    height: 460px;
+}

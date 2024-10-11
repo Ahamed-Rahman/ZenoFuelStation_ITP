@@ -1,0 +1,30 @@
+/* src/components/OrderNavigationPage.css */
+.order-navigation-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.order-block {
+    width: 30%;
+    padding: 20px;
+    background-color: #4caf50; /* Green background */
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.order-block:hover {
+    transform: scale(1.05);
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.order-block h2 {
+    margin: 0;
+    font-size: 1.5em;
+}

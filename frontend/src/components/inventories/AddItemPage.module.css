@@ -1,0 +1,148 @@
+
+.AhamedpageContainer {
+  position: relative;
+  min-height: 900vh; /* Ensure the page container covers the full height */
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden; /* Prevent content from overflowing */
+  margin-left: -90px;
+}
+
+.Ahamedbackground {
+  position: fixed; /* Fix the background in place */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*background: url('../assets/images/kk.jpg') no-repeat center center; */
+ background-color: #fff;
+  background-size: cover; /* Cover the entire viewport */
+  z-index: -2; /* Ensure it's behind both the content and the black overlay */
+  border-radius: 10px;
+  
+}
+
+.AhamedaddItemPage {
+  max-width: 9500px;
+  margin: 0 auto;
+  padding: 50px;
+ 
+ margin-left: 400px;
+  font-family: Arial, sans-serif;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ background-color: #ffffff;
+  min-height: 500px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  border-radius: 15px;
+}
+
+.AhamedaddItemPage h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.AhamedaddItemPage form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 700px;
+  
+}
+
+.AhamedaddItemPage label {
+  font-size: 14px;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+}
+
+
+
+
+.AhamedSelect{
+  padding: 15px;
+  border: 0.5px solid #1b2997;
+   border-radius: 10px;
+   font-size: 13px;
+   width: 880px;
+   box-sizing: border-box;
+   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+   background-color: #fff;
+   width: 633px;
+   
+}
+
+
+
+.AhamedNumber{
+  padding: 15px;
+  border: 0.5px solid #1b2997;
+   border-radius: 10px;
+   font-size: 13px;
+   width: 880px;
+   box-sizing: border-box;
+   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+   background-color: #fff;
+   width: 633px;
+}
+
+.AhamedDate{
+  padding: 15px;
+  border: 0.5px solid #1b2997;
+   border-radius: 10px;
+   font-size: 13px;
+   width: 880px;
+   box-sizing: border-box;
+   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+   background-color: #fff;
+   width: 633px;
+}
+
+
+
+
+.AhamedSelect select:focus {
+  border-color: #5c5c8a;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+
+.AhamedAdd{
+  background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+  padding: 10px;
+  width: 300px;
+  border-radius: 10px;
+  margin-left: 210px;
+  border: none;
+  color: #fff;
+}
+
+.AhamedAdd :focus {
+background-color: #081a70;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+
+
+
+.addItemPage button:hover {
+  background-color: #0d2742;
+}
+
+.AhamedAdd :active {
+  transform: scale(0.98);
+}
+

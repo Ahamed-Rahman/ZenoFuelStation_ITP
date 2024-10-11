@@ -1,0 +1,206 @@
+.add-promo-layout {
+  display: flex;
+  min-height: 100vh;
+  margin-bottom: 20px;
+  
+}
+
+.add-promo-container {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-promo-container .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.add-promo-side-nav {
+  width: 200px;
+  background-color: #1b4989;
+  color: white;
+  padding-top: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  height: auto;
+  position: sticky;
+  top: 30px;
+  left: 0;
+  margin-top: 20px;
+}
+
+.add-promo-side-nav .nav-header {
+  padding: 0 20px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.add-promo-side-nav .nav-header h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.add-promo-side-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.add-promo-side-nav li {
+  margin-bottom: 10px;
+}
+
+.add-promo-side-nav a {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.add-promo-side-nav a:hover, .add-promo-side-nav a.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.add-promo-side-nav i {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.minimum-purchase-container {
+  margin-top: 20px; /* Add some space above the container */
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: fit-content; /* Set width to fit content */
+}
+
+.minimum-purchase-container h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.input-group {
+display: flex; /* Use flexbox for input and button alignment */
+align-items: center; /* Center align items vertically */
+margin-bottom: 10px; /* Add space below the input group */
+}
+
+.input-group input {
+  margin-top: 22px;
+  margin-right: 10px; /* Add space between input and button */
+  flex: 1; /* Allow input to take available space */
+}
+
+.minimum-purchase-container .input-group {
+margin-right: 10px; /* Add space between input and button */
+flex: 1; /* Allow input to take available space */
+min-width: 150px;
+}
+
+.minimum-purchase-container .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.minimum-purchase-container .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.current-amount {
+  font-weight: bold;
+  color: #28a745;
+  margin-bottom: 0;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px 8px 0 0;
+  margin-top: 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+form h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.btn-secondary {
+  margin-top: 10px;
+  width: auto; /* Set width to auto to wrap text */
+  padding: 5px 10px; /* Adjust padding for better appearance */
+  display: inline-block; /* Ensure the button only takes up necessary space */
+  background-color: #007bff;
+}
+
+.btn-secondary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.popup-overlay {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.7); /* Darker background */
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 1000; /* Ensure it appears above other content */
+}
+
+.popup-container {
+background: #ffffff;
+padding: 30px; /* Increased padding */
+border-radius: 12px; /* Rounded corners */
+text-align: center;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
+animation: fadeIn 0.3s; /* Fade-in effect */
+}
+
+.popup-message {
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.5rem; /* Increased font size */
+color: #333; /* Darker text color */
+}
+
+.animated-tick {
+color: green;
+margin-right: 15px; /* Increased margin */
+font-size: 2rem; /* Increased tick size */
+animation: tick-animation 0.5s ease-in-out;
+}
+
+.text-danger {
+color: red; /* Red color for error messages */
+margin-top: 5px; /* Space above the error message */
+}
+
+.text-success {
+color: green; /* Green color for success messages */
+margin-top: 5px; /* Space above the success message */
+margin-left: 0; /* Reset left margin */
+}
+
+
+@keyframes tick-animation {
+0% { transform: scale(0); }
+50% { transform: scale(1.2); }
+100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}

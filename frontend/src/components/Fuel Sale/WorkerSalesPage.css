@@ -1,0 +1,125 @@
+.bg{
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 150px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #80c1f2;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.worker-sales-page {
+  margin-top: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.worker-sales-page h1 {
+  font-size: 23px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.worker-sales-page form {
+ 
+  padding: 20px;
+ 
+
+  margin-bottom: 20px;
+}
+
+.worker-sales-page .bill-summary {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+
+.worker-sales-page form label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #333;
+}
+
+.worker-sales-page form select{
+  width: 500px;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.worker-sales-page form input {
+  width: 540px;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+
+
+.worker-sales-page .bill-summary h2 {
+  font-size: 23px;
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.worker-sales-page .bill-summary p {
+  font-size: 15px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.worker-sales-page .bill-summary .bill-item {
+  border-top: 1px solid #ddd;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.worker-sales-page .bill-summary .bill-item span {
+  font-weight: bold;
+}
+
+.worker-sales-page .bill-summary button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  display: block;
+  width: 200px;
+  margin-left: 226px;
+}
+
+.worker-sales-page .bill-summary button:hover {
+  background-color: #218838;
+}
+
+
+.DinukaSubmitWorker{
+  background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  width: 200px;
+  margin-left: 230px;
+  color: white;
+  font-size: 14px;
+}

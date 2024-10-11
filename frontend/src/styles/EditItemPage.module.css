@@ -1,0 +1,138 @@
+.pageContainer {
+  position: relative;
+  min-height: 900vh; /* Ensure the page container covers the full height */
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden; /* Prevent content from overflowing */
+}
+
+.background {
+  position: fixed; /* Fix the background in place */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*background: url('../assets/images/kk.jpg') no-repeat center center; */
+  background: linear-gradient(90deg, #67a5c2 0%, #003366 100%);
+  background-size: cover; /* Cover the entire viewport */
+  z-index: -2; /* Ensure it's behind both the content and the black overlay */
+  
+}
+.editItemPage {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px; /* Ensure minimum height */
+  margin-top: 20px; /* Adjust top margin */
+  margin-bottom: 20px; /* Adjust bottom margin */
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.heading {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.label {
+  font-size: 13px;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  padding: 12px;
+  border: 1px solid #3f4aa2;
+  border-radius: 30px;
+  font-size: 13px;
+  width: 500px;
+  box-sizing: border-box;
+}
+
+.inputFocus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.select {
+  padding: 12px;
+  border: 1px solid #3f4aa2;
+  border-radius: 30px;
+  font-size: 13px;
+  width: 500px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.selectFocus {
+  border-color: #5c5c8a;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.button {
+  background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 14px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 300px;
+}
+
+.buttonHover {
+  background-color: #0056b3;
+}
+
+.buttonActive {
+  transform: scale(0.98);
+}
+.editItemPage .goBackButton {
+  background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 12px;
+  padding: 10px;
+
+  cursor: pointer;
+  position: absolute;
+  top: 60px;
+  left: 490px;
+  width: auto;
+  max-width: 120px;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.goBackButton:hover {
+  background-color: #5a6268;
+}
+
+.goBackButton:active {
+  transform: scale(0.98);
+}

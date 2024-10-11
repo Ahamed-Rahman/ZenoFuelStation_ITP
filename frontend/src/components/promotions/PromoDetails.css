@@ -1,0 +1,505 @@
+.promo-container {
+  max-width: 1200px; /* Increased from 800px */
+  margin: 40px auto;
+  padding: 30px; /* Increased from 20px */
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+.promo-grid-container {
+  height: 700px; /* Set the height of the grid container */
+  overflow-y: auto; /* Enable vertical scrolling */
+  display: flex;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust columns as needed */
+  gap: 16px; /* Space between grid items */
+  padding: 16px;
+  border: 1px solid #ccc; /* Optional: Add a border */
+  background-color: #f9f9f9; /* Optional: Background color */
+  border-radius: 8px; /* Optional: Rounded corners */
+  margin: auto;
+}
+
+
+.chart-containers {
+  display: flex;
+  justify-content: space-between; /* Space charts evenly */
+  margin: 60px 0; /* Margin for spacing */
+  flex-wrap: nowrap; /* Prevent wrapping to keep charts in a single row */
+  padding: 20px; /* Added padding to the container */
+  background-color: #f5f5f5; /* Optional: Background color for the container */
+  border-radius: 10px; /* Optional: Rounded corners for the container */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Optional: Shadow for depth */
+  height: 400px;
+}
+
+.chart {
+  flex: 1; /* Allow charts to grow equally */
+  min-width: 300px; /* Minimum width for responsiveness */
+  max-width: 48%; /* Set a maximum width to fit two charts side by side */
+  padding: 14px; /* Padding for better spacing */
+  margin-right: 20px; /* Space between charts */
+  background-color: #f9f9f9; /* Background color for charts */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  height: 370px;
+}
+
+h3{
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #000000;
+  margin-top: -10px;
+  margin-left: 10px;
+  text-align: center;
+}
+/* button{
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #7c1515;
+  margin-top: -13px;
+  margin-left: 10px;
+}*/
+
+.chart-header{
+
+  width: 100px;
+  margin-left: 100px;
+}
+
+.chart-headers{
+
+  width: 150px;
+  margin-left: 100px;
+}
+
+.chart-headers h3{
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #000000;
+  margin-top: -10px;
+  margin-left: -50px;
+  text-align: center;
+  width: 400px;
+}
+
+.chart-headers button{
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #7c1515;
+  margin-top: -93px;
+  margin-left: 300px;
+}
+.pieChart{
+  width: 300px;
+  height: 700px;
+  margin-bottom: 50px;
+  margin-left: 100px;
+}
+
+.barChart{
+  width: 500px;
+  height: 1800px;
+  margin-bottom: 50px;
+  margin-left: -10px;
+}
+
+.charts {
+  flex: 1; /* Allow charts to grow equally */
+  min-width: 300px; /* Minimum width for responsiveness */
+  max-width: 48%; /* Set a maximum width to fit two charts side by side */
+  padding: 14px; /* Padding for better spacing */
+  margin-right: 20px; /* Space between charts */
+  background-color: #f9f9f9; /* Background color for charts */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  height: 370px;
+}
+
+
+.promo-container h1 {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.Lasitha-search-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Added space between search bar and filter button */
+  padding: 5px;
+}
+
+.Lasitha-search {
+  width: 500px;
+  height: 30px;
+  padding: 5px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.promo-code {
+  background-color: #FFFFC2; 
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 350px;
+}
+
+.promo-code h2 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.promo-code p {
+  margin-bottom: 10px;
+}
+
+.promo-code .actions {
+  margin-top: 10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.download-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.download-btn i {
+  margin-right: 10px;
+}
+
+.update-btn, .delete-btn {
+  width: 100px;
+  height: 40px;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.update-btn {
+  background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+  color: #fff;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.bottom-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0;
+}
+
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.update-btn, .delete-btn {
+  margin: 0 10px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 15px; /* Space between search bar and filter button */
+}
+
+.filters {
+  margin-top: 20px; /* Space between promo codes and filters */
+  display: flex;
+  gap: 30px; /* Adjusted space between dropdowns */
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.filter-group select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.filter-group select:focus {
+  border-color: #1abc9c;
+  box-shadow: 0 0 8px rgba(26, 188, 156, 0.5);
+}
+
+.promo-container .promo-grid {
+  margin-top: 20px; /* Added space between filters and promo grid */
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 300px;
+}
+
+.download-chart-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.download-chart-btn:hover {
+  color: #007bff;
+}
+
+.promo-details-page {
+  padding: 20px 20px 20px 0;
+}
+
+.promo-details-layout {
+  display: flex;
+  gap: 20px;
+}
+
+.promo-details-side-nav {
+  width: 200px;
+  background-color: #1b4989;
+  color: white;
+  padding: 20px;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  height: auto;
+  position: sticky;
+  top: 20px;
+  left: 0;
+  margin-top: 20px;
+}
+
+.promo-details-side-nav .nav-header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+}
+
+.promo-details-side-nav .nav-header h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.promo-details-side-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.promo-details-side-nav li {
+  margin-bottom: 10px;
+}
+
+.promo-details-side-nav a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+}
+
+.promo-details-side-nav a:hover,
+.promo-details-side-nav a.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.promo-details-side-nav i {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.promo-details-container {
+  flex-grow: 1;
+  padding: 30px;
+  background-color: #f5f5f5;
+  margin-left: 0;
+  margin-top: 20px;
+}
+
+.email-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.email-input-container {
+  display: flex;
+  gap: 10px;
+}
+
+.email-input-container input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.email-input-container button {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.confirm-container {
+  background: #ffffff;
+  padding: 30px; /* Increased padding */
+  border-radius: 12px; /* Rounded corners */
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  animation: fadeIn 0.3s; /* Fade-in effect */
+}
+
+.confirm-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem; /* Increased font size */
+  color: #333; /* Darker text color */
+  margin-bottom: 20px; /* Space below the message */
+}
+
+.confirm-message i {
+  color: red; /* Red color for the exclamation mark */
+  font-size: 2rem; /* Increased size for visibility */
+  margin-right: 10px; /* Space between icon and text */
+}
+
+.confirm-buttons {
+  display: flex;
+  justify-content: space-around; /* Space buttons evenly */
+}
+
+.btn-delete {
+  background-color: red; /* Red color for Yes button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: darkred; /* Darker red on hover */
+}
+
+.btn-cancel {
+  background-color: white; /* White color for Cancel button */
+  color: black;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-cancel:hover {
+  background-color: #f0f0f0; /* Light gray on hover */
+}
+
+.popup-container {
+  background: #ffffff;
+  padding: 30px; /* Increased padding */
+  border-radius: 12px; /* Rounded corners */
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  animation: fadeIn 0.3s; /* Fade-in effect */
+}
+
+.popup-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem; /* Increased font size */
+  color: #333; /* Darker text color */
+}
+
+.animated-tick {
+  color: green;
+  margin-right: 10px; /* Space between icon and text */
+  font-size: 2rem; /* Increased tick size */
+  animation: tick-animation 0.5s ease-in-out;
+}
+
+@keyframes tick-animation {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

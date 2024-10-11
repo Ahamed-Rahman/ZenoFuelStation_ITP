@@ -1,0 +1,86 @@
+/* frontend/src/styles/SidebarLayout.css */
+
+.layout {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.sidebar {
+    width: 250px; /* Fixed width for the sidebar */
+    background-color: #11326f; /* Background color */
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow for better separation */
+    border-radius: 17px;
+    position: fixed; /* Keeps sidebar fixed */
+    height: 100%; /* Full height of the viewport */
+    margin-left: -15px;
+    top: 120px;
+    transition: transform 0.3s ease; /* Smooth transition for sidebar toggle */
+    z-index: 999; /* Higher z-index for sidebar */
+}
+
+.main-content {
+    flex: 1; /* Takes the remaining space */
+    padding: 20px;
+    margin-top: 60px;
+    display: inline;
+    position: relative;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0; /* Increased space between links */
+}
+
+.sidebar ul li a, .sidebar ul li button {
+    text-decoration: none;
+    color: #fffefe; /* Text color */
+    font-weight: bold;
+    font-size: 16px; /* Slightly larger font size */
+    display: flex;
+    align-items: center;
+    padding: 10px 15px; /* Added padding for clickable area */
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Sidebar link hover effect */
+.sidebar ul li a:hover {
+    background-color: #1d447d; /* Darker background on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+.sidebar ul li button {
+    background-color: #11326f; /* Background color */
+    border: none;
+    box-shadow: none;
+}
+
+/* Button hover effect */
+.sidebar ul li button:hover {
+    background-color: #1d447d;
+    width: 245px; /* Adjust width on hover */
+}
+
+/* Separator line */
+.separator-line {
+    border: none;
+    border-top: 1px solid #ddd; /* Light gray line */
+    margin: 20px 0; /* Margin above and below the line */
+}
+
+/* Sidebar GIF styling */
+.sidebar-gif {
+    margin-top: 20px; /* Space above the GIF */
+    text-align: center; /* Center-align the GIF */
+}
+
+.sidebar-gif img {
+    max-width: 100%; /* Ensure the GIF does not overflow */
+    height: 400px; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for the GIF */
+}

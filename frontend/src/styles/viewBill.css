@@ -1,0 +1,107 @@
+/* Unique container styles for the sales bill page */
+.sales-bill-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #80c1f2;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+.sales-bill-container h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+/* Table styles */
+.sales-bill-container table {
+    width: 900px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-left: 290px;
+}
+
+.sales-bill-container thead {
+    background-color: #2980b9;
+    color: white;
+}
+
+.sales-bill-container th, .sales-bill-container td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.sales-bill-container td img {
+    width: 60px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Button styles */
+.sales-bill-container button {
+    background-color: #0e3789;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    width: 200px;
+}
+
+.sales-bill-container button:hover {
+    background-color: #1a5276;
+}
+
+/* Form styles */
+.form-contain form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    width: 800px;
+    margin-left: 300px;
+    padding: 40px;
+}
+
+.form-contain label {
+    font-weight: bold;
+    color: #34495e;
+}
+
+.sales-bill-container input[type="date"],
+.sales-bill-container input[type="text"] {
+    padding: 10px;
+    border: 2px solid #b5c0c6;
+    border-radius: 20px;
+    width: 500px;
+}
+
+/* Total price display */
+.sales-bill-container p {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #2c3e50;
+}
+
+.btns {
+    background-color: #80c1f2;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    margin-left: 530px;
+}
+

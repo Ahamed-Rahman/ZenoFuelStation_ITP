@@ -1,0 +1,164 @@
+/* EditProfileForm.css */
+
+.edit-profile-form-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.edit-profile-form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 800px; /* Increased width to accommodate two fields per row */
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-profile-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-photo-large {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #4551d7;
+    margin-bottom: 10px;
+    background-size: cover;
+}
+
+.update-photo-button {
+    background-color: #334ec8;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 3px 6px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.form-horizontal {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 1;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of fields if needed */
+    margin-bottom: 15px;
+    flex-direction: row;
+}
+
+.form-groups {
+    flex: 0 0 48%; /* Ensures two fields fit in a single row */
+    margin-right: 4%; /* Space between fields */
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-groups:nth-of-type(2n) {
+    margin-right: 0; /* Remove margin on the right for every second element */
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    color: #666666;
+    font-weight: bold;
+}
+
+.form-groups input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    color: #5982cf;
+    font-size: 13px;
+    background-color: #dcdfe8;
+    box-shadow: #000000;
+}
+
+.form-groups input[type="email"]{
+    width: 100%;
+    margin: 8px 0;
+    box-sizing: border-box;
+    color: #5982cf;
+    background-color: #dcdfe8;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #efeeee;
+
+    
+   
+  }
+
+  .form-groups input[type="text"]{
+    width: 100%;
+    margin: 8px 0;
+    box-sizing: border-box;
+    color: #5982cf;
+    background-color: #dcdfe8;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #efeeee;
+
+    
+   
+  }
+  
+
+.form-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.form-button button {
+    background-color: #334ec8;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 25px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.form-button button[type="button"] {
+    background-color: #e52d2d;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 800px) {
+    .edit-profile-form {
+        width: 70%;
+    }
+
+    .form-row {
+        flex-direction: row;
+    }
+
+    .form-group {
+        flex: 1;
+        margin-right: 0; /* Remove right margin on smaller screens */
+    }
+}

@@ -1,0 +1,45 @@
+/* frontend/src/styles/Dashboard.module.css */
+
+.dashboardContainers {
+    z-index: 1;
+   
+}
+
+.pageTitle {
+    margin-bottom: 20px;
+    text-align: center;
+    margin-left: 296px;
+}
+
+/* frontend/src/styles/Dashboard.module.css */
+
+.chartsWrapper {
+    display: flex;
+    
+    justify-content: space-evenly; /* Ensure even spacing */
+    flex-wrap: nowrap; /* Prevent charts from wrapping */
+    width: 100%; /* Full width of the container */
+    margin: 0 auto;
+}
+
+.chart {
+    flex: 1;
+    width: 400px;
+    max-width: 500px; /* Limit each chart's width */
+    background-color: #7ec0f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 285px;
+    margin-left: 290px;
+}
+
+.chartS {
+    flex: 1;
+    max-width: 400px; /* Limit each chart's width */
+    background-color: #7ec0f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 455px;
+}

@@ -1,0 +1,51 @@
+/* Container for the pie chart */
+/* frontend/src/styles/InventoryChart.css */
+
+.chart-containers {
+  margin: 20px auto; /* Center the chart container and add vertical margins */
+  padding: 30px;
+  max-width: 300px; /* Limit the maximum width of the chart container */
+  background: rgb(255, 255, 255);
+  border-radius: 12px; /* Rounded corners for a softer look */
+  box-shadow: 0 7px 8px rgba(18, 18, 18, 0.5); /* Subtle shadow for depth */
+  text-align: center; /* Center-align the content within the container */
+  margin-top: 15px; /* Removed negative margin */
+}
+
+/* Chart title */
+.chart-container h2 {
+  font-size: 20px; /* Font size for the title */
+  color: #000000; /* Color for the title text */
+  margin-bottom: 20px; /* Space between title and chart */
+  font-family: 'Arial', sans-serif; /* Font style for the title */
+  text-align: center;
+}
+
+/* Pie chart styling */
+.chart-container .chartjs-render-monitor {
+  height: 400px; /* Set a fixed height for the chart */
+  width: 100%; /* Ensure the chart takes the full width of the container */
+}
+
+/* Adjust the legend styling */
+.chartjs-legend {
+  display: flex;
+  justify-content: space-evenly; /* Center-align the legend */
+  flex-wrap: wrap; /* Allow the legend items to wrap to multiple lines */
+  margin-top: 20px; /* Space between the chart and the legend */
+  color: #ffffff; /* Set the text color of the legend to white */
+}
+
+.chartjs-legend ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  font-family: 'Arial', sans-serif; /* Font style for the legend */
+}
+
+.chartjs-legend li {
+  margin: 5px 10px; /* Space between legend items */
+  font-size: 12px; /* Font size for the legend items */
+  justify-content: end;
+
+}

@@ -1,0 +1,65 @@
+/* SoldVsTotalLitresChart.module.css */
+
+.AhamedchartContainer1 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-left: -1px;
+    margin-bottom: 10px;
+    height: 600px;
+    margin-top: -130px;
+  }
+
+  
+  .AhamedchartWrapper1 {
+  
+    width: 1000px; /* Adjust as needed */
+    align-items: center;
+    padding: 85px;
+    background-color: #ffffff; /* Sky blue background color */
+    border-radius: 17px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    display: flex;
+    
+    
+    height: 200px; 
+ 
+  }
+
+  /* InventoryChart.css */
+.downloadButton {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.downloadButton:hover {
+  background-color: #45a049;
+}
+
+/* SoldVsTotalLitresChart.module.css */
+.downloadButton {
+  margin-top: 300px;
+  padding: 10px;
+  background-color: #1d328e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  
+  margin-left: 75px;
+}
+
+.downloadButton:hover {
+  background-color: #5ea0e2;
+}
+
+  
+
+

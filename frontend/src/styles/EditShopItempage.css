@@ -1,0 +1,101 @@
+.edit-shop-item-page {
+  max-width: 700px; /* Adjusted width of the container */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+  font-family: Arial, sans-serif;
+  position: relative; /* Position the Go Back button relative to this container */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+  justify-content: center; /* Center the content vertically */
+  min-height: 50vh; /* Minimum height for better fit */
+  max-height: 100vh; /* Maximum height to avoid overflow */
+  margin-top: 1vh; /* Reduced margin-top to move container higher */
+  box-sizing: border-box;
+}
+
+.edit-shop-item-page h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.edit-shop-item-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%; /* Ensure form takes full width of the container */
+  max-width: 600px; /* Further reduced max-width for form elements */
+}
+
+.edit-shop-item-page label {
+  font-size: 16px; /* Slightly increased font size for consistency */
+  color: #444;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-shop-item-page input {
+  padding: 12px;
+  border: 1px solid #9c9fb7;
+  border-radius: 10px;
+  font-size: 13px;
+  width: 500px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit-shop-item-page input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.edit-shop-item-page button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%;
+}
+
+.edit-shop-item-page button:hover {
+  background-color: #0056b3;
+}
+
+.edit-shop-item-page button:active {
+  transform: scale(0.98);
+}
+
+.edit-shop-item-page .go-back-button {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  position: absolute; /* Positioning it absolutely */
+  top: 20px;
+  left: 20px; /* Move button to the top-left corner */
+  width: auto;
+  max-width: 120px;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.edit-shop-item-page .go-back-button:hover {
+  background-color: #5a6268;
+}
+
+.edit-shop-item-page .go-back-button:active {
+  transform: scale(0.98);
+}

@@ -1,0 +1,143 @@
+.UserTableHead{
+    margin-left: 720px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    color: rgb(6, 6, 70);
+}
+.shakeekaUserTables {
+    width: 1220px;
+    border-collapse: collapse;
+    margin-top: 2px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-left: 250px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shakeekaUserTables th, .shakeekainventoryTables td {
+    
+    text-align: left;
+    font-size: 13px;
+  }
+  
+  .shakeekaUserTables th {
+    background-color: #bfd5eb; /* Bluish Ash */
+    color: #3b3e47;
+    padding: 16px;
+  }
+  
+  .shakeekaUserTables td {
+    color: #333;
+    padding: 18px;
+    font-size: 13px;
+  }
+  
+  .shakeekaUserTables tr:nth-child(even) {
+    background-color: #f7f7f7;
+  }
+  
+  .shakeekaUserTables tr:hover {
+    background-color: #e3f2fd; /* Light blue background on hover */
+  }
+  
+  .shakeekaGenerateCardtButton {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    margin-right: -830px;
+    margin-top: 10px;
+  }
+  
+  .shakeekaGenerateCardtButton {
+    
+    background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    font-size: 12px;
+    border: none;
+    width: 65px;
+    text-align: center;
+    justify-content: center;
+    margin-left: -12px;
+  }
+  
+  .shakeekaGenerateCardtButton:hover{
+    background-color: #1e61bf;
+  }
+  
+  .shakeekaGenerateCardtButton:hover {
+    background-color: #4582a0;
+  }
+
+  /* UserTable.module.css */
+.modalBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Blur effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px); /* Blurring the background */
+}
+
+.modalForm {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    height: 320px;
+}
+
+.shakeehoo{
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.modalForm button:hover {
+    background-color: #0056b3;
+}
+
+.ShakeeDownload{
+    margin: 10px;
+    padding: 10px;
+    background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ShakeeSend{
+    margin: 10px;
+    padding: 10px;
+    background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.ShakeeClose{
+    margin: 10px;
+    padding: 10px;
+    background-color: #941616;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.shakeehum{
+    margin-top: 5px;
+}

@@ -1,0 +1,50 @@
+.leaveContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .leaveContainer h2 {
+    margin-bottom: 20px;
+  }
+  
+  .leaveContainer form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .leaveContainer label {
+    margin-bottom: 15px;
+  }
+  
+  .leaveContainer input,
+  .leaveContainer select,
+  .leaveContainer textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .leaveContainer button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .leaveContainer button:hover {
+    background-color: #0056b3;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 10px;
+  }
+  

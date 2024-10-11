@@ -1,0 +1,241 @@
+/* ManagerAttendanceTable.module.css */
+
+  
+    
+.Shakeekamanagertable {
+    width: 1000px;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-left: 270px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: white;
+    }
+
+ 
+
+    .ManagerHead{
+      text-align: center;
+      margin-top: 90px;
+    }
+    
+    .Shakeekamanagertable th, .table td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      color: rgb(23, 39, 49);
+      font-size: 14px;
+    }
+    
+    .Shakeekamanagertable th {
+      background-color: #bfd5eb; /* Bluish Ash */
+      color: rgb(23, 39, 49);
+      font-size: 14px;
+      text-align: center;
+    }
+    
+    .Shakeekamanagertable td {
+     text-align: center;
+     padding: 10px;
+     
+    }
+
+    .scrollableContainer {
+      max-height: 400px;  /* Set a height limit */
+      overflow-y: auto;   /* Enable vertical scrolling */
+      overflow-x: hidden; /* Disable horizontal scrolling */
+      margin-top: 10px;
+      margin-bottom: 20px;
+      width: fit-content; /* Make sure the width fits the table content */
+      padding-right: 10px; /* Add some padding to prevent scroll bar overlap with table */
+    }
+    
+  
+.AhamedAccept{
+  background-color: #1e61bf;
+  padding: 8px;
+  color: white;
+  border-radius: 6px;
+}
+
+.AhamedHead{
+  text-align: center;
+  margin-top: 30px;
+ 
+}
+
+.AhamedHead2{
+  margin-left: 270px;
+  margin-top: 20px;
+}
+
+  
+.AhamedAccept2{
+  background-color: #bf1e1e;
+  padding: 8px;
+  color: white;
+  border-radius: 6px;
+}
+       
+.Shakeekamanagertable2{
+  width: 1000px;
+  border-collapse: collapse;
+  margin-top: 10px;
+  margin-left: 270px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: white;
+  margin-top: 30px;
+  
+  }
+
+
+
+  .ManagerHead{
+    text-align: center;
+    margin-top: 90px;
+  }
+  
+  .Shakeekamanagertable2 th, .table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: rgb(23, 39, 49);
+    font-size: 14px;
+  }
+  
+  .Shakeekamanagertable2 th {
+    background-color: #bfd5eb; /* Bluish Ash */
+    color: rgb(23, 39, 49);
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .Shakeekamanagertable2 td {
+   text-align: center;
+   padding: 10px;
+   
+  }
+  .deleteButton {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .deleteButton:hover {
+    background-color: #c82333;
+  }
+  
+  .NiflagenerateReportButton6{
+    background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 1140px;
+    margin-top: 10px;
+  }
+  
+  /* Blurred background when modal is active */
+.blurredBackground {
+  filter: blur(5px);
+  pointer-events: none; /* Prevent interactions with the background */
+}
+
+/* Modal overlay styling */
+.modalOverlayQ {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 1000; /* Ensure it is above other content */
+}
+
+/* Form inside modal styling (optional) */
+.modalOverlayQ > div {
+  background-color: white;
+  padding: 90px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+}
+
+
+
+/* Form Container */
+.acceptOrderForm {
+  background-color: #ffffff; /* White background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 400px; /* Max width for the form */
+  margin: 0 auto; /* Center the form */
+  font-family: Arial, sans-serif; /* Use a clean font */
+}
+
+/* Form Title */
+.acceptOrderFormQH {
+  text-align: center; /* Center the title */
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Labels for inputs */
+.acceptOrderFormL {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Input Fields */
+.acceptOrderFormQ {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+/* Submit Button */
+.acceptOrderFormQB{
+  width: 100%;
+  background-color: #28a745; /* Green background */
+  color: #ffffff; /* White text */
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Submit Button Hover */
+.acceptOrderFormQB:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+.acceptOrderFormCancel{
+  width: 100%;
+  background-color: #a72a28; /* Green background */
+  color: #ffffff; /* White text */
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+  margin-top: 10px;
+}

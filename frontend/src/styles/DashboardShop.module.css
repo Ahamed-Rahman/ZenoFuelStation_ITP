@@ -1,0 +1,44 @@
+/* frontend/src/styles/Dashboard.module.css */
+
+.dashboardContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 0px;
+    align-items: center; /* Centers the entire container content */
+    margin-left: 410px;
+    width: 100%;
+    z-index: 1; /* Lower z-index for other content */
+    position: relative; /* Ensure z-index is applied */
+}
+
+.pageTitle {
+    margin-bottom: 20px;
+    text-align: center; /* Center the dashboard title */
+    margin-left: -1096px;
+}
+
+.chartsWrapper {
+    display: flex;
+    gap: 90px; /* Space between the charts */
+    flex-wrap: wrap; /* Allow charts to wrap if needed */
+    justify-content: center; /* Center the charts horizontally */
+  /* Use full width to allow charts to expand */
+    margin: 0 auto; /* Centers the charts wrapper */
+    margin-left: -46px;
+    
+}
+
+.chart {
+    flex: 1;
+    width: 800px; /* Increase width of the chart */
+    max-width: 1600px; /* Ensures responsiveness */
+    background-color: #7ec0f5;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    margin-left: -80px;
+    height: 500px;
+    
+}

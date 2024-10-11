@@ -1,0 +1,85 @@
+/* src/styles/ManagerDashboard.css */
+.inventory-Page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    background-color: white;
+ 
+  }
+  
+ 
+
+  .inventory-Page h1 {
+    margin-bottom: 20px;
+    font-size: 29px;
+    color: #050f42;
+    text-align: center;
+    font-weight: 800px;
+  }
+  
+  .search-bar-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 29px;
+  }
+  
+  .search-bar {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  .inventory-Table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .inventory-Table th, .inventory-Table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .inventory-Table th {
+    background-color: #97b8da;
+    color: #333;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  
+  .inventory-Table td {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .inventory-Table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .inventory-Table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .low-stock {
+    background-color: #ffe5e5;
+    color: #d9534f;
+    font-weight: bold;
+  }
+  

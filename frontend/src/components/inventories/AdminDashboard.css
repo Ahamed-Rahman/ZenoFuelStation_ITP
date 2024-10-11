@@ -1,0 +1,74 @@
+.AhamedDashboard {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 249px;
+    width: 1180px;
+    height: 1000px;
+    background-color: rgb(149, 197, 241);
+  }
+
+#Ahamed-records-table{
+  width: 1100px;
+  border-collapse: collapse;
+  margin-top: 5px;
+  margin-left: 60px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: white;
+  }
+  
+
+  
+  
+  #Ahamed-records-table th, #Ahamed-records-table td{
+
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: rgb(23, 39, 49);
+    font-size: 14px;
+
+  }
+
+  #Ahamed-records-table th {
+    background-color: #bfd5eb; /* Bluish Ash */
+  color: rgb(23, 39, 49);
+  font-size: 14px;
+    
+  
+  }
+  
+  
+  
+.filtersection {
+  
+ 
+    margin-bottom: 10px; /* Space between filters and table */
+    
+  }
+  
+  .filterSelect {
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #ccc; /* Light border */
+    margin-left: 60px;
+    border-color: #1d82e7;
+  }
+  
+  .dateInput {
+    padding: 8px;
+    border-radius: 20px;
+    border-color: #1d82e7;/* Light border */
+
+    margin-left: 10px;
+  }
+
+  .add-inventory-button{
+    background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 6px;
+  }

@@ -1,0 +1,38 @@
+.chartContainers {
+    width: 500px; /* Reduce the container width */
+    
+    
+   background-color:white ;
+    border-radius: 12px;
+
+}
+
+.chart {
+    width: 40px;
+    height: 400px;
+    background-color: #ffffff;
+}
+
+.legend {
+    color: #ffffff; /* Ensure the legend text is white */
+}
+.chartWrapper {
+    width: 100%;
+    max-width: 200px; /* Change to 100% to use the full width */
+    height: auto; /* Adjust height as needed */
+    padding: 10px; /* Reduce padding */
+    margin-top: 6px; /* Optional: Set top margin to zero */
+    background-color: #ffffff; /* Maintain background color */
+    border-radius: 17px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+  .chartContainers {
+    background-color: #ffffff; /* Set the background color to white */
+    padding: 20px; /* Optional: Add padding for some spacing */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow for better visual appeal */
+}
+
+  

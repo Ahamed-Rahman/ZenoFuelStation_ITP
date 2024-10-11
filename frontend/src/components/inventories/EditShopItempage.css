@@ -1,0 +1,99 @@
+.Ahamed-edit-shop-item-page {
+  max-width: 800px; /* Adjusted width of the container */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+  font-family: Arial, sans-serif;
+  position: relative; /* Position the Go Back button relative to this container */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+  justify-content: center; /* Center the content vertically */
+/* Minimum height for better fit */
+  max-height: 650px; /* Maximum height to avoid overflow */
+  margin-top: 80px; /* Reduced margin-top to move container higher */
+  box-sizing: border-box;
+  padding: 200px;
+}
+
+.Ahamed-edit-shop-item-page h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+
+.Ahamed-edit-shop-item-page label {
+  font-size: 16px; /* Slightly increased font size for consistency */
+  color: #444;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+.Ahamed-edit-shop-item-page button:hover {
+  background-color: #0056b3;
+}
+
+.Ahamed-edit-shop-item-page button:active {
+  transform: scale(0.98);
+}
+
+.Ahamed-edit-shop-item-page .Ahamed-go-back-button {
+  background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 12px;
+  padding: 10px;
+margin-top: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: auto;
+  max-width: 120px;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Ahamed-edit-shop-item-page .go-back-button:hover {
+  background-color: #5a6268;
+}
+
+.Ahamed-edit-shop-item-page .go-back-button:active {
+  transform: scale(0.98);
+}
+
+.Ahamed3{
+  padding: 12px;
+  border: 0.5px solid #1b2997;
+   border-radius: 10px;
+   font-size: 13px;
+   width: 880px;
+   box-sizing: border-box;
+   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+   background-color: #fff;
+   width: 633px;
+   margin-left: 10px;
+   margin-top: 12px;
+  
+   
+}
+
+
+.AhamedUpdate{
+  background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+  padding: 10px;
+  width: 200px;
+  border-radius: 8px;
+  margin-left: 210px;
+  border: none;
+  color: white;
+}

@@ -1,0 +1,89 @@
+.salaryTableContainer {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .salaryTableContainer h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .salaryTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .salaryTable th, .salaryTable td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .salaryTable th {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .salaryTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .salaryTable tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .salaryTable td {
+    color: #333;
+  }
+  
+  .salaryTable td button {
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .editButton {
+    background-color: #2ecc71;
+    color: white;
+    transition: background-color 0.2s;
+  }
+  
+  .editButton:hover {
+    background-color: #27ae60;
+  }
+  
+  .deleteButton {
+    background-color: #e74c3c;
+    color: white;
+    transition: background-color 0.2s;
+  }
+  
+  .deleteButton:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .salaryTableContainer {
+      padding: 10px;
+    }
+  
+    .salaryTable th, .salaryTable td {
+      padding: 10px;
+      font-size: 12px;
+    }
+  
+    .salaryTableContainer h2 {
+      font-size: 20px;
+    }
+  }
+  

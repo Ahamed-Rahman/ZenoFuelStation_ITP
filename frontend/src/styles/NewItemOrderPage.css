@@ -1,0 +1,60 @@
+/* NewItemOrderPage.css */
+
+.new-item-order-page {
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background for contrast */
+}
+
+.new-item-order-page__title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333; /* Darker text for title */
+}
+
+.new-item-order-page__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+
+.new-item-order-page__table-header {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: #fff; /* White text for better visibility */
+}
+
+.new-item-order-page__table-header th {
+  padding: 10px;
+}
+
+.new-item-order-page__table-body tr {
+  border-bottom: 1px solid #ddd; /* Light border for rows */
+}
+
+.new-item-order-page__table-body td {
+  padding: 10px;
+}
+
+.new-item-order-page__input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc; /* Light border for inputs */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.new-item-order-page__button {
+  background-color: #28a745; /* Bootstrap success color */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px; /* Rounded corners */
+}
+
+.new-item-order-page__button--delete {
+  background-color: #dc3545; /* Bootstrap danger color */
+}
+
+.new-item-order-page__button:hover {
+  opacity: 0.9; /* Slight hover effect */
+}

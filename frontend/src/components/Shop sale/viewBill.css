@@ -1,0 +1,180 @@
+/* Unique container styles for the sales bill page */
+.seshan-sales-bill-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    border-radius: 10px;
+    
+}
+
+/* Table Styles */
+#Sheshan-records-table {
+    width: 850px;
+    border-collapse: collapse;
+    margin-top: -25px;
+    margin-left: 320px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: white;
+  }
+
+  #Sheshan-records-table th{
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: rgb(23, 39, 49);
+    font-size: 14px;
+    background-color: #bfd5eb; /* Bluish Ash */
+  }
+
+  #Sheshan-records-table td{
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: rgb(23, 39, 49);
+    font-size: 14px;
+  }
+  
+
+
+  
+/* Heading styles */
+.SeshanTitle {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+    font-size: 29px;
+}
+
+/* Table styles */
+
+
+
+
+.seshan-sales-bill-container td img {
+    width: 60px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Button styles */
+.seshanRemove {
+    background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    width: 100px;
+}
+
+
+
+/* Form styles */
+.seshan-form-contain form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    width: 800px;
+    margin-left: 300px;
+    padding: 40px;
+}
+
+.seshanLabel {
+    font-weight: bold;
+    color: #34495e;
+    margin-left: 150px;
+}
+
+.seshanDate {
+    padding: 10px;
+    border: 2px solid #b5c0c6;
+    border-radius: 20px;
+    width: 500px;
+    margin-left: 150px;
+}
+
+/* Total price display */
+.seshanTotal {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #2c3e50;
+    margin-left: 350px;
+}
+
+.seshanCode {
+    font-weight: bold;
+    color: #34495e;
+    margin-left: 150px;
+}
+
+.seshanPromo {
+    padding: 10px;
+    border: 2px solid #b5c0c6;
+    border-radius: 20px;
+    width: 500px;
+    margin-left: 150px;
+}
+
+.seshanbtn {
+    background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+    color: white;
+    border: none;
+    padding: 8px;
+    width: 200px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    margin-left: 330px;
+    font-size: 14px;
+}
+
+.seshan-btns{
+    
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    margin-left: 630px;
+    font-size: 14px;
+    
+}
+
+.seshan-view-orders{
+    background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    font-size: 14px;
+}
+
+.seshan-dbb{
+    background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+ 
+    font-size: 14px;
+}
+
+
+

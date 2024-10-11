@@ -1,0 +1,134 @@
+/* Container for the whole verification page */
+.verificationPage {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+
+
+.verificationContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f5f5f5; /* Adjust as needed */
+    width: 1000px; /* Adjust as needed */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading style */
+.verificationcontainer h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 10px; /* Adjust to move the heading up */
+}
+
+/* Container for the form and image */
+.verificationContent {
+    display: flex;
+    flex-direction: column; /* Arrange elements vertically */
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* Adjust as needed */
+    padding: 20px;
+}
+
+/* Image style as a background */
+.verificationImage {
+    width: 350px; /* Larger size */
+    height: 350px; /* Larger size */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 20px; /* Space between image and text */
+}
+
+/* Text style below the image */
+.verificationContent p {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+/* Form container style */
+.verificationForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Container for code input fields */
+.codeInputs {
+    display: flex;
+    gap: 10px; /* Space between input boxes */
+    margin-bottom: 20px; /* Space below the code inputs */
+}
+
+/* Center the code input fields */
+.verificationContent .codeInputs {
+    justify-content: center;
+}
+
+/* Individual input field style */
+.codeInputs input {
+    width: 60px; /* Width of each box */
+    height: 60px; /* Height of each box */
+    font-size: 1.5em;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 0; /* Remove margin to bring boxes closer */
+    background-color: #8c949b;
+    box-shadow: #000000;
+}
+
+/* Button style */
+.verificationForm button {
+    padding: 10px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff; /* Primary color */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Space above the button */
+}
+
+.verificationForm button:disabled {
+    background-color: #6c757d; /* Disabled state color */
+}
+
+.verificationForm button:not(:disabled):hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+/* Error message style */
+.verificationForm p.error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.verificationForm p{
+    text-align: center;
+}
+
+/* Resend button style within the paragraph */
+.verificationForm p button {
+    background: none;
+    color: #007bff; /* Primary color for link effect */
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+}

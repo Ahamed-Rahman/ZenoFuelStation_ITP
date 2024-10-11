@@ -1,0 +1,188 @@
+.background {
+  position: fixed; /* Fix the background in place */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ /*background: url('../assets/images/kk.jpg') no-repeat center center; */
+  background: rgb(168, 199, 223);
+  background-size: cover; /* Cover the entire viewport */
+  z-index: -2; /* Ensure it's behind both the content and the black overlay */
+  
+}
+.fuelSalesRecordsPage {
+  padding: 12px;
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 10px;
+  position: relative;
+  background: rgb(168, 199, 223);
+}
+
+
+
+.fuelTable {
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table td {
+  padding: 17px;
+  text-align: center;
+  border: 0.5px solid #ccc;
+}
+
+table th {
+  background-color: #88a4b9;
+  color: rgb(57, 57, 57);
+  font-weight: bold;
+  padding: 15px;
+  text-align: center;
+}
+
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.delete {
+  padding: 8px 12px;
+  background-color: #d9390d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 70px;
+}
+
+.delete:hover {
+  background-color: #4d0404;
+}
+
+button:focus {
+  outline: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 999;
+}
+
+.fuelSalesRecordsPage.blurred {
+  position: relative;
+  z-index: 1;
+}
+
+.fuelSalesRecordsPage.blurred .fuelTable,
+.fuelSalesRecordsPage.blurred h1 {
+  filter: blur(5px);
+}
+
+.editForm {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 500px;
+}
+
+.editForm h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.editForm label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  width: 400px;
+}
+
+.editForm select,
+.editForm input[type="number"] {
+  width: 400px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.editForm select:focus,
+.editForm input[type="number"]:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.cancel {
+  width: 70%;
+  padding: 10px;
+  background-color: #d9390d;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.update {
+  width: 69%;
+  padding: 10px;
+  background-color: #2a52d5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.update:hover {
+  background-color: #0c163a;
+}
+
+.cancel:hover {
+  background-color: #3a120c;
+}
+
+
+.Dinukasearch-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.Dinukasearch-input,
+.Dinukadate-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px; /* Adjust width as needed */
+}
+
+.Dinukasearch-input:focus,
+.Dinukadate-input:focus {
+  border-color: #007bff; /* Change to your focus color */
+  outline: none;
+}

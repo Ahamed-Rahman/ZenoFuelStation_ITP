@@ -1,0 +1,24 @@
+/* SoldVsTotalLitresChart.module.css */
+
+.chartContainer {
+    display: flex;
+  
+    align-items: center;
+    width: 100%;
+  
+    margin-left: -1px;
+    margin-bottom: 10px;
+   
+  }
+
+  
+  .chartWrapper {
+    width: 100%;
+    max-width: 900px; /* Adjust as needed */
+   
+    padding: 35px;
+    background-color: #ffffff; /* Sky blue background color */
+    border-radius: 17px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+  }
+  

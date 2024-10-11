@@ -1,0 +1,28 @@
+.chart-container {
+    width: 500px; /* Reduce the container width */
+    
+    
+  
+    border-radius: 12px;
+
+}
+
+.chart {
+    width: 400px;
+    height: 100%;
+}
+
+.legend {
+    color: #ffffff; /* Ensure the legend text is white */
+}
+.chartWrapper {
+    width: 100%;
+    max-width: 900px; /* Adjust as needed */
+    height: 389px; /* Adjust as needed */
+    padding: 20px;
+    background-color: #ffffff; /* Sky blue background color */
+    border-radius: 17px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+   
+  }
+  

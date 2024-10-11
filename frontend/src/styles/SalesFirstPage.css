@@ -1,0 +1,78 @@
+/* src/styles/InventoryFirstPage.css */
+
+.sales-first-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: rgb(149, 197, 241);
+    font-family: Arial, sans-serif;
+  }
+  
+  .sale-first-page h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0d2d51;
+    font-weight: 750;
+  }
+  
+  .sale-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; /* Width of each block */
+    height: 140px; /* Height of each block */
+    margin: 13px 0; /* Spacing between blocks */
+    background-color: #087bff; /* Default background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    cursor: pointer;
+    position: relative; /* Position for overlay */
+    color: #1a2747; /* Text color */
+    overflow: hidden; /* Ensure image stays within block */
+  }
+  
+  .sale-block:hover {
+    background-color: #0056b3; /* Darker blue background on hover */
+    transform: scale(1.02); /* Slight scale effect on hover */
+  }
+  
+  .sale-content {
+    position: absolute; /* Overlay text on the image */
+   color: #031121;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .sale-content h3 {
+    margin: 0;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  /* Positioning the images in the corner */
+  .sale-block .sale-image {
+    position: absolute;
+    bottom: 10px;
+    right: 10px; /* Adjust if needed */
+    width: 140px; /* Adjust size as needed */
+    height: auto;
+  }
+  
+  /* Specific block colors with blue shades */
+  .sale-block.fuel-sales {
+    background-color: #4476c3; /* Lighter blue for Fuel Inventory */
+  }
+  
+  .sale-block.shop-sales {
+    background-color: #4476c3; /* Medium blue for Shop Inventory */
+  }
+  
+  .sale-block.wash-station-sales {
+    background-color: #4476c3; /* Darker blue for Wash Station Inventory */
+  }
+  

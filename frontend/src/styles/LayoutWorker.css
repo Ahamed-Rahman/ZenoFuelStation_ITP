@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.layouts {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Updated font */
+  position: relative; /* For the footer positioning */
+}
+
+.top-headers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px; 
+  background: linear-gradient(90deg, #1c3163 0%, #0d1734 100%);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.top-headers .company-names {
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  position: relative;
+  color: #ffffff; 
+  padding-bottom: 10px; 
+}
+
+.top-headers .company-names::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #ed3030, #710606); 
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+}
+
+.header-lefts {
+  position: absolute;
+  left: 20px;
+}
+
+.header-lefts .logos {
+  height: 90px; 
+}
+
+.header-rights {
+  position: absolute;
+  right: 20px; 
+}
+
+.header-rights .profile-photos {
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.profile-photos {
+  height: 40px; /* Adjust the height */
+  width: 40px;  /* Ensure width and height are equal for round shape */
+  border-radius: 50%; /* Perfect round shape */
+  cursor: pointer;
+   border: 2px solid #f84646; /* Illuminating border around the profile photo */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+  margin-right: 30px; /* Adjusted margin to move it more to the left */
+}
+
+.profile-photos:hover {
+  border-color: #ffffff; /* Change border color on hover */
+}
+
+.profile-menus {
+  position: absolute;
+  top: 60px; /* Adjust based on profile photo size and header height */
+  right: 0;
+  background-color: #ffff;
+  color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  z-index: 1000; /* Ensures the menu is above other elements */
+  width: 200px; /* Adjust width as needed */
+}
+
+.profile-menus buttons {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for background */
+}
+
+.profile-menus button:hover {
+  background-color: #ddd; 
+}
+
+/* Management Header for Worker */
+.management-headers {
+  position: fixed; /* Fixes the management header just below the top header */
+  top: 60px; /* Adjust based on the height of the top header */
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9); /* Light background with slight transparency */
+  backdrop-filter: blur(5px); /* Blurs the background behind the header */
+  padding: 10px 20px; /* Adjust padding for spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Light shadow for separation */
+  z-index: 999; /* Ensure it stays below the top header */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border for definition */
+  display: flex;
+  justify-content: center; /* Centers the entire content */
+}
+
+/* Remove left margin from list items */
+.management-headers ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the links horizontally */
+}
+
+.management-headers li {
+  margin: 0 15px; /* Margin for spacing between items */
+  position: relative;
+}
+
+.management-headers a {
+  color: #1b4989; /* Darker color for links */
+  text-decoration: none;
+  padding: 5px 0;
+  transition: color 0.3s ease; /* Smooth transition for color */
+  display: block; /* Make the link a block element for padding and underline effect */
+  font-weight: 500; /* Slightly bolder text */
+  font-size: 14px;
+}
+
+.management-headers a.active {
+  color: #464ff8;
+}
+
+.management-headers a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #464ff8; /* Underline color */
+  transition: width 0.3s ease; /* Smooth transition for underline */
+  position: absolute;
+  bottom: -5px; /* Position underline below the text */
+  left: 0;
+}
+
+.management-headers a:hover::after,
+.management-headers a.active::after {
+  width: 100%; /* Full width underline for active and hovered links */
+}
+
+.main-contents {
+  padding: 20px;
+  margin-top: 120px; /* Add top margin to account for fixed headers */
+  flex: 1; /* Ensures the main content takes up the remaining space */
+}
+
+.footers {
+  background: linear-gradient(90deg, #1c3163 0%, #0d1734 100%);
+  color: #eee;
+  text-align: center;
+  padding: 20px 30px;
+  font-size: 14px;
+  box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.3); /* Shadow for separation */
+  position: fixed; /* Fixes the footer to the bottom */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it stays on top */
+}

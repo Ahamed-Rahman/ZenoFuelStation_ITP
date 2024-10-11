@@ -1,0 +1,65 @@
+.container {
+    padding: 20px;
+    background-image: url('https://detailxperts.com/wp-content/uploads/2020/04/Gas-Station-Car-Wash-Business-for-You.jpg'); 
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .heading {
+    text-align: center;
+    margin-bottom: 40px; /* Increased margin for better spacing */
+    font-size: 45px;
+    color: #ffffff;
+    font-weight: bold; /* Added font-weight */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow for better readability */
+  }
+  
+  .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px; /* Space between cards */
+    max-width: 1200px; /* Limit maximum width for better layout */
+  }
+  
+  .card {
+    background-color: #ffffff; /* Changed to white for better contrast */
+    border-radius: 12px; /* Slightly increased border-radius */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for a more pronounced effect */
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Slightly enlarge card on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+  }
+  
+  .card-img {
+    width: 100%;
+    height: 200px; /* Increased height for a more impactful image */
+    object-fit: cover;
+  }
+  
+  .card-body {
+    padding: 20px; /* Added padding for better spacing */
+  }
+  
+  .card-title {
+    font-size: 22px; /* Adjusted font size */
+    margin-bottom: 15px; /* Increased margin for spacing */
+    text-align: center; /* Centered title */
+    color: #333333; /* Changed to dark gray for better readability */
+    font-weight: 600; /* Slightly bolder font */
+  }
+  
+  .card-text {
+    font-size: 16px; /* Increased font size for better readability */
+    margin-bottom: 10px; /* Adjusted margin for consistent spacing */
+    color: #555555; /* Changed to a lighter gray */
+  }
+  
+  

@@ -1,0 +1,72 @@
+/* ManagerAttendanceTable.module.css */
+
+  
+    
+  .Niflamanagertable {
+    width: 1000px;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-left: 270px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: white;
+    }
+
+    .NiflaSearching5{
+      margin-left: 130px;
+      padding: 6px;
+      border-radius: 8px;
+      border-color: rgb(40, 86, 159);
+      margin-bottom: 5px;
+      margin-top: 10px;
+     }
+
+    .ManagerHead{
+      text-align: center;
+      margin-top: 90px;
+    }
+    
+    .Niflamanagertable th, .table td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      color: rgb(23, 39, 49);
+      font-size: 14px;
+    }
+    
+    .Niflamanagertable th {
+      background-color: #bfd5eb; /* Bluish Ash */
+      color: rgb(23, 39, 49);
+      font-size: 14px;
+      text-align: center;
+    }
+    
+    .Niflamanagertable td {
+     text-align: center;
+     padding: 10px;
+     
+    }
+  .deleteButton {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .deleteButton:hover {
+    background-color: #c82333;
+  }
+  
+  .NiflagenerateReportButton6{
+    background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 1140px;
+    margin-top: 10px;
+  }
+  

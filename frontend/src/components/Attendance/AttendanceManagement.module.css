@@ -1,0 +1,45 @@
+/* frontend/src/styles/AttendanceManagement.module.css */
+.attendanceContainer {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .attendanceContainer h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .attendanceContainer form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .attendanceContainer label {
+    margin-bottom: 15px;
+  }
+  
+  .attendanceContainer input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .attendanceContainer button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .attendanceContainer button:hover {
+    background-color: #0056b3;
+  }
+  

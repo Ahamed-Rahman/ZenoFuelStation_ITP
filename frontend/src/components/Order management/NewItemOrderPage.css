@@ -1,0 +1,113 @@
+.place-new-order-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 249px;
+  width: 1180px;
+  height: 1000px;
+  background-color: rgb(149, 197, 241);
+}
+
+
+.place-new-order-page h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.place-new-order-page__button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.place-new-order-page__button:hover {
+  background-color: #0056b3;
+}
+
+.place-new-order-page__table {
+  width: 1000px;
+  border-collapse: collapse; /* Ensures borders are shared between cells */
+  margin-top: 20px;
+  margin-left: 110px;
+  
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 70px;
+}
+
+
+
+
+
+.place-new-order-page__table th, 
+.place-new-order-page__table td {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+   /* Smooth transition for hover effects */
+}
+
+.place-new-order-page__table th {
+  background-color: #829dbb; /* A modern blue */
+  color: #fff; /* White text */
+  font-size: 14px;
+}
+
+
+.place-new-order-page__table th {
+  background-color: #bfd5eb;/* Bluish Ash */
+  color: rgb(37, 46, 52);
+  font-size: 14px;
+  
+
+}
+
+.place-new-order-page__table td {
+  
+  color: rgb(23, 39, 49);
+  font-size: 14px;
+  background-color: #ffffff; /* White background */
+  border-bottom: 1px solid #ddd;
+}
+
+/* Hover effects */
+.place-new-order-page__table tr:hover {
+  background-color: rgba(0, 123, 255, 0.1); /* Light blue background on row hover */
+}
+
+.DananjayaInput {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+
+
+.place-new-order-page__table input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.DananjayaOrder {
+  padding: 5px;
+  background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 13px;
+}
+
+.DananjayaOrder:hover {
+  background-color: #218838;
+}
