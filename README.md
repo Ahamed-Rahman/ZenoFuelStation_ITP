@@ -48,12 +48,15 @@ The *Fuel Station Management System* is an *all-in-one* web-based application de
 - *🚿 Wash Station Control*  
   Managers can manage wash station operations, ensuring efficiency and service quality.
 
+- *🛠️ Complete Worker Functionality*  
+  Managers can perform all tasks associated with **Workers**, ensuring flexibility in operations.
+
 ---
 
 ### **Admin Features**
 
 - *👤 User Account Management*  
-  **Admin** have full control over creating, updating, and deleting **Manager** and **Worker** accounts. They can set initial login credentials and define user roles.
+  **Admin** has full control over creating, updating, and deleting **Manager** and **Worker** accounts. They can set initial login credentials and define user roles.
 
 - *📈 Admin Dashboard*  
   Admins have access to key performance indicators such as inquiry counts, order statuses, and inventory levels.
@@ -76,6 +79,9 @@ The *Fuel Station Management System* is an *all-in-one* web-based application de
 - *📊 Reports Generation*  
   Admins can generate detailed reports on various aspects like attendance, sales, inventory, and employee performance.
 
+- *🛠️ Complete Role Functionality*  
+  Admins can perform all tasks associated with both **Managers** and **Workers**, ensuring complete oversight and control over all operations.
+
 ---
 
 ## 📈 *Workflow by Role*
@@ -87,7 +93,6 @@ The *Fuel Station Management System* is an *all-in-one* web-based application de
 3. *📝 Profile Management*: Workers can update their personal profiles and passwords.
 4. *🕒 Attendance Logging*: Workers log attendance and apply for leave.
 
-
 ### **Manager Workflow**
 
 1. *🔑 Login*: Managers log in with their credentials.
@@ -95,6 +100,7 @@ The *Fuel Station Management System* is an *all-in-one* web-based application de
 3. *🕒 Attendance Management*: Managers monitor worker attendance and manage leave requests.
 4. *📦 Order Management*: Managers handle orders and interact with suppliers.
 5. *📊 Reports Generation*: Managers generate reports on employee attendance, sales performance, and inventory levels.
+6. *🛠️ Complete Worker Functionality*: Managers can perform all tasks assigned to **Workers**.
 
 ### **Admin Workflow**
 
@@ -105,6 +111,7 @@ The *Fuel Station Management System* is an *all-in-one* web-based application de
 5. *🛠️ Supplier Management*: Admin places orders and tracks supplier performance.
 6. *📦 Product and Inventory Management*: Admin adds new products, manages stock levels, and oversees fuel sales.
 7. *📊 Reports Generation*: Admin generates comprehensive reports for system evaluation and decision-making.
+8. *🛠️ Complete Role Functionality*: Admin can execute all tasks assigned to both **Managers** and **Workers**.
 
 ---
 
