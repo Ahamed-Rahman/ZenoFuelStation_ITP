@@ -6,81 +6,102 @@
 
 ## 🌟 *Overview*
 
-The *Fuel Station Management System* is an *all-in-one* web-based application crafted to revolutionize operations at fuel stations. With a comprehensive suite of features, it efficiently manages user accounts, inventory, sales, attendance, orders, promotions, and supplier interactions, ensuring a seamless experience for employees and administrators alike.
+The *Fuel Station Management System* is an *all-in-one* web-based application designed to streamline fuel station operations. The system provides a range of functionalities for **Workers**, **Managers**, and **Admins**. It efficiently manages user accounts, inventory, sales, attendance, orders, promotions, and supplier interactions, offering a seamless experience for employees and administrators.
 
 ---
 
-## 🔑 *Key Features*
+## 🔑 *Key Features by Role*
 
-### *User Features* 
+### **Worker Features**
 
 - *👤 User Account Management*  
-  Create accounts, log in, and manage profiles (password changes and account deletion).
+  Workers can log in, update their profiles, and reset passwords when necessary.
 
 - *🕒 Attendance Management*  
-  Employees can log their attendance, apply for leaves, and track attendance records.
-
-- *📦 Order Management*  
-  Create, update, and delete orders, managing details and supplier interactions effortlessly.
-
-### *Employee Features*
-
-- *🔑 Employee Registration and Login*  
-  Register and log in using unique credentials.
-
-- *👥 Profile Management*  
-  Update personal profiles and change passwords with ease.
-
-- *🌴 Leave Applications*  
-  Apply for leave and track the status of requests seamlessly.
+  Workers can log their attendance and apply for leaves.
 
 - *📊 Inventory Monitoring*  
-  Check inventory status and request restocking when necessary.
-
-### *Administrative Features*
-
-- *📈 Admin Dashboard*  
-  Access to key metrics such as inquiry counts, order statuses, and inventory levels at a glance.
-
-- *💸 Promotions and Discounts Management*  
-  Create and manage promotional codes and discounts to boost customer engagement.
-
-- *🛠️ Supplier Management*  
-  Communicate with suppliers, place orders, and monitor supplier performance efficiently.
-
-- *💼 Salary Calculation and Management*  
-  Manage employee salaries based on attendance records accurately.
-
-- *🛒 Shop Sales Management*  
-  Handle customer transactions, apply discounts, and manage returns smoothly.
-
-- *⛽ Fuel Sales Management*  
-  Oversee fuel sales transactions, manage pricing, and ensure accurate fuel dispensing.
-
-- *📊 Reports Generation*  
-  Generate insightful reports on various functionalities for informed decision-making.
+  Workers can check the inventory status and request restocking when necessary.
 
 ---
 
-## 📈 *Workflow*
+### **Manager Features**
 
-### *Employee Workflow*
+- *👤 User Account Management*  
+  Managers can view and update **Worker** details but cannot create or delete accounts.
 
-1. *👥 Registration*: Employees register with valid details.
-2. *🔐 Login*: Sign in using their credentials.
-3. *📝 Profile Management*: Update profile information and manage leave applications.
-4. *🕒 Attendance Logging*: Log attendance and apply for leave.
-5. *📦 Inventory Monitoring*: Check inventory and request restocking as necessary.
+- *🕒 Attendance Management*  
+  Managers can review **Worker** attendance, approve or reject leave applications, and generate attendance reports.
 
-### *Administration Workflow*
+- *📦 Order Management*  
+  Managers can create, update, and monitor orders and interact with suppliers.
 
-1. *🔑 Login*: Admins sign in with their credentials.
-2. *📊 Dashboard Management*: Monitor metrics related to operations.
-3. *📬 Inquiry Management*: Respond to customer inquiries and manage interactions.
-4. *🛍️ Product and Order Management*: Add products, process orders, and manage inventory.
-5. *👥 Employee Management*: Handle employee details and salary calculations.
-6. *🛒 Sales Management*: Manage shop and fuel sales transactions, including discounts and returns.
-7. *📊 Report Generation*: Create detailed reports for decision-making.
+- *📊 Reports Generation*  
+  Managers can generate reports on attendance, sales, and inventory levels.
+
+- *📬 Inquiry Management*  
+  Managers can handle customer inquiries and address any issues that arise.
+
+- *📦 Inventory Monitoring and Management*  
+  Managers have permission to monitor and manage inventory levels.
+
+---
+
+### **Admin Features**
+
+- *👤 User Account Management*  
+  **Admins** have full control over creating, updating, and deleting **Manager** and **Worker** accounts. They can set initial login credentials and define user roles.
+
+- *📈 Admin Dashboard*  
+  Admins have access to key performance indicators such as inquiry counts, order statuses, and inventory levels.
+
+- *🕒 Attendance and Salary Management*  
+  Admins can monitor attendance records and manage salary calculations based on those records. This includes adjustments in payroll for leaves and overtime.
+
+- *💸 Promotions and Discounts Management*  
+  Admins manage promotional codes and discounts to attract customers and boost sales.
+
+- *🛠️ Supplier Management*  
+  Admins can oversee supplier interactions, place large orders, and evaluate supplier performance.
+
+- *🛒 Shop Sales Management*  
+  Admins can oversee shop sales, handle transactions, apply discounts, and manage product returns.
+
+- *⛽ Fuel Sales Management*  
+  Admins can manage fuel sales transactions, pricing, and ensure accurate fuel dispensing.
+
+- *📊 Reports Generation*  
+  Admins can generate detailed reports on various aspects like attendance, sales, inventory, and employee performance.
+
+---
+
+## 📈 *Workflow by Role*
+
+### **Worker Workflow**
+
+1. *👥 Registration*: Workers are registered by **Admins**.
+2. *🔐 Login*: Workers log in using their assigned credentials.
+3. *📝 Profile Management*: Workers can update their personal profiles and passwords.
+4. *🕒 Attendance Logging*: Workers log attendance and apply for leave.
+5. *📊 Inventory Monitoring*: Workers check inventory and request restocking.
+
+### **Manager Workflow**
+
+1. *🔑 Login*: Managers log in with their credentials.
+2. *📝 Profile Management*: Managers can view and update worker profiles.
+3. *🕒 Attendance Management*: Managers monitor worker attendance and manage leave requests.
+4. *📦 Order Management*: Managers handle orders and interact with suppliers.
+5. *📊 Reports Generation*: Managers generate reports on employee attendance and sales performance.
+
+### **Admin Workflow**
+
+1. *🔑 Login*: Admins log in with their credentials.
+2. *👤 User Management*: Admins create and manage accounts for both Managers and Workers.
+3. *📊 Dashboard Management*: Admins monitor key metrics related to inventory, sales, and inquiries.
+4. *💸 Promotions and Discounts Management*: Admins manage promotional codes and oversee sales campaigns.
+5. *🛠️ Supplier Management*: Admins place orders and track supplier performance.
+6. *📦 Product and Inventory Management*: Admins add new products, manage stock levels, and oversee fuel sales.
+7. *📊 Reports Generation*: Admins generate comprehensive reports for system evaluation and decision-making.
 
 ---
 
@@ -94,7 +115,6 @@ The *Fuel Station Management System* is an *all-in-one* web-based application cr
 </div>
 
 ---
-
 
 ## 👥 *Project Contributors*
 
@@ -169,16 +189,12 @@ The *Fuel Station Management System* is an *all-in-one* web-based application cr
   </tr>
 </table>
 
-
-
-
-
-
+---
 
 ## 📋 *Getting Started*
 
 To set up the *Fuel Station Management System* on your local machine, follow these steps:
 
-1. *🛠️ Clone the repository*:
+1. **🛠️ Clone the repository**:
    ```bash
    git clone https://github.com/yourusername/fuel-station-management-system.git
