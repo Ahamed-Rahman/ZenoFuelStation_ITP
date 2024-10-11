@@ -173,8 +173,8 @@ The *Fuel Station Management System* is an *all-in-one* web-based application de
       - Order Management  
     </td>
     <td align="center">
-      <a href="https://github.com/username6">
-        <img src="https://github.com/username6.png?size=100" width="80" height="80" style="border-radius: 50%;" /><br />
+      <a href="https://github.com/Wijeboy">
+        <img src="https://github.com/Wijeboy.png?size=100" width="80" height="80" style="border-radius: 50%;" /><br />
         W.M.P.J Wijenayake
       </a><br />
       Contributions:  
