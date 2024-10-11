@@ -1,6 +1,6 @@
 # ⛽ Fuel Station Management System
 
-![Fuel Station Management System](https://via.placeholder.com/1200x300?text=Fuel+Station+Management+System) <!-- Replace with an appropriate image URL -->
+<img src="image/zeno.png" alt="Fuel Station Management System" /><!-- Replace with an appropriate image URL -->
 
 ---
 
