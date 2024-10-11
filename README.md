@@ -101,8 +101,8 @@ The *Fuel Station Management System* is an *all-in-one* web-based application cr
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/username1">
-        <img src="https://github.com/username1.png?size=100" width="80" height="80" style="border-radius: 50%;" /><br />
+      <a href="https://github.com/It22643018">
+        <img src="https://github.com/It22643018.png?size=100" width="80" height="80" style="border-radius: 50%;" /><br />
         M.R.F Shakeeka
       </a><br />
       Contributions:  
@@ -135,8 +135,8 @@ The *Fuel Station Management System* is an *all-in-one* web-based application cr
   </tr>
   <tr>
     <td align="center">
-      <a href="https://github.com/username5">
-        <img src="https://github.com/username5.png?size=100" width="80" height="80" style="border-radius: 50%;" /><br />
+      <a href="https://github.com/Dhananjaya-14">
+        <img src="https://github.com/Dhananjaya-14.png?size=100" width="80" height="80" style="border-radius: 50%;" /><br />
         D.M.D.B Bulumulla
       </a><br />
       Contributions:  
@@ -151,16 +151,16 @@ The *Fuel Station Management System* is an *all-in-one* web-based application cr
       - Wash Station Control  
     </td>
     <td align="center">
-      <a href="https://github.com/username7">
-        <img src="https://github.com/username7.png?size=100" width="80" height="80" style="border-radius: 50%;" /><br />
+      <a href="https://github.com/Shesh-IT">
+        <img src="https://github.com/Shesh-IT.png?size=100" width="80" height="80" style="border-radius: 50%;" /><br />
         W.A.S.P.D Wijesinghe
       </a><br />
       Contributions:  
       - Shop Sales Management  
     </td>
     <td align="center">
-      <a href="https://github.com/username8">
-        <img src="https://github.com/username8.png?size=100" width="80" height="80" style="border-radius: 50%;" /><br />
+      <a href="https://github.com/IT22644008">
+        <img src="https://github.com/IT22644008.png?size=100" width="80" height="80" style="border-radius: 50%;" /><br />
         A.R Nifla
       </a><br />
       Contributions:  
