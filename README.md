@@ -6,7 +6,7 @@
 
 ## 🌟 *Overview*
 
-The *Fuel Station Management System* is an *all-in-one* web-based application designed to streamline fuel station operations. The system provides a range of functionalities for **Workers**, **Managers**, and **Admins**. It efficiently manages user accounts, inventory, sales, attendance, orders, promotions, and supplier interactions, offering a seamless experience for employees and administrators.
+The *Fuel Station Management System* is an *all-in-one* web-based application designed to streamline fuel station operations. The system provides a range of functionalities for **Workers**, **Managers**, and **Admin**. It efficiently manages user accounts, inventory, sales, attendance, orders, promotions, and supplier interactions, offering a seamless experience for employees and administrators.
 
 ---
 
@@ -50,7 +50,7 @@ The *Fuel Station Management System* is an *all-in-one* web-based application de
 ### **Admin Features**
 
 - *👤 User Account Management*  
-  **Admins** have full control over creating, updating, and deleting **Manager** and **Worker** accounts. They can set initial login credentials and define user roles.
+  **Admin** have full control over creating, updating, and deleting **Manager** and **Worker** accounts. They can set initial login credentials and define user roles.
 
 - *📈 Admin Dashboard*  
   Admins have access to key performance indicators such as inquiry counts, order statuses, and inventory levels.
@@ -79,7 +79,7 @@ The *Fuel Station Management System* is an *all-in-one* web-based application de
 
 ### **Worker Workflow**
 
-1. *👥 Registration*: Workers are registered by **Admins**.
+1. *👥 Registration*: Workers are registered by **Admin**.
 2. *🔐 Login*: Workers log in using their assigned credentials.
 3. *📝 Profile Management*: Workers can update their personal profiles and passwords.
 4. *🕒 Attendance Logging*: Workers log attendance and apply for leave.
@@ -95,13 +95,13 @@ The *Fuel Station Management System* is an *all-in-one* web-based application de
 
 ### **Admin Workflow**
 
-1. *🔑 Login*: Admins log in with their credentials.
-2. *👤 User Management*: Admins create and manage accounts for both Managers and Workers.
-3. *📊 Dashboard Management*: Admins monitor key metrics related to inventory, sales, and inquiries.
-4. *💸 Promotions and Discounts Management*: Admins manage promotional codes and oversee sales campaigns.
-5. *🛠️ Supplier Management*: Admins place orders and track supplier performance.
-6. *📦 Product and Inventory Management*: Admins add new products, manage stock levels, and oversee fuel sales.
-7. *📊 Reports Generation*: Admins generate comprehensive reports for system evaluation and decision-making.
+1. *🔑 Login*: Admin log in with their credentials.
+2. *👤 User Management*: Admin create and manage accounts for both Managers and Workers.
+3. *📊 Dashboard Management*: Admin monitor key metrics related to inventory, sales, and inquiries.
+4. *💸 Promotions and Discounts Management*: Admin manage promotional codes and oversee sales campaigns.
+5. *🛠️ Supplier Management*: Admin place orders and track supplier performance.
+6. *📦 Product and Inventory Management*: Admin add new products, manage stock levels, and oversee fuel sales.
+7. *📊 Reports Generation*: Admin generate comprehensive reports for system evaluation and decision-making.
 
 ---
 
@@ -126,7 +126,7 @@ The *Fuel Station Management System* is an *all-in-one* web-based application de
         M.R.F Shakeeka
       </a><br />
       Contributions:  
-      - User Account Management & Salary Calculation Management
+      - User Account Management & Supplier Management & Salary Calculation Management
     </td>
     <td align="center">
       <a href="https://github.com/Ahamed-Rahman">
@@ -134,7 +134,7 @@ The *Fuel Station Management System* is an *all-in-one* web-based application de
         F.R Ahamed
       </a><br />
       Contributions:  
-      - Inventory Management & Supplier Management 
+      - Inventory Management & Supplier Management & Salary Calculation Management
     </td>
     <td align="center">
       <a href="https://github.com/Dinuka24-coder">
