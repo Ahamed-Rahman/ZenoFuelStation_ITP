@@ -20,8 +20,8 @@ The *Fuel Station Management System* is an *all-in-one* web-based application de
 - *🕒 Attendance Management*  
   Workers can log their attendance and apply for leaves.
 
-- *📊 Inventory Monitoring*  
-  Workers can check the inventory status and request restocking when necessary.
+- *⛽ Fuel Sales Management*  
+  Workers are responsible for handling fuel sales transactions and ensuring accurate fuel dispensing.
 
 ---
 
@@ -83,15 +83,16 @@ The *Fuel Station Management System* is an *all-in-one* web-based application de
 2. *🔐 Login*: Workers log in using their assigned credentials.
 3. *📝 Profile Management*: Workers can update their personal profiles and passwords.
 4. *🕒 Attendance Logging*: Workers log attendance and apply for leave.
-5. *📊 Inventory Monitoring*: Workers check inventory and request restocking.
+5. *⛽ Fuel Sales Management*: Workers handle fuel sales and ensure correct fuel dispensing.
 
 ### **Manager Workflow**
 
-1. *🔑 Login*: Managers log in with their credentials.
-2. *📝 Profile Management*: Managers can view and update worker profiles.
-3. *🕒 Attendance Management*: Managers monitor worker attendance and manage leave requests.
-4. *📦 Order Management*: Managers handle orders and interact with suppliers.
-5. *📊 Reports Generation*: Managers generate reports on employee attendance and sales performance.
+1. *👥 Registration*: Managers are registered by **Admin**.
+2. *🔑 Login*: Managers log in with their credentials.
+3. *📝 Profile Management*: Managers can view and update worker profiles.
+4. *🕒 Attendance Management*: Managers monitor worker attendance and manage leave requests.
+5. *📦 Order Management*: Managers handle orders and interact with suppliers.
+6. *📊 Reports Generation*: Managers generate reports on employee attendance and sales performance.
 
 ### **Admin Workflow**
 
