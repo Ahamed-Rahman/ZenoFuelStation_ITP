@@ -147,7 +147,7 @@ The *Fuel Station Management System* is an *all-in-one* web-based application cr
         <img src="https://github.com/username6.png?size=100" width="80" height="80" style="border-radius: 50%;" /><br />
         W.M.P.J Wijenayake
       </a><br />
-      *Contributions*:  
+      Contributions:  
       - Wash Station Control  
     </td>
     <td align="center">
