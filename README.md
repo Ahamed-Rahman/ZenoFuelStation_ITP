@@ -86,7 +86,7 @@ The *Fuel Station Management System* is an *all-in-one* web-based application de
 2. *🔐 Login*: Workers log in using their assigned credentials.
 3. *📝 Profile Management*: Workers can update their personal profiles and passwords.
 4. *🕒 Attendance Logging*: Workers log attendance and apply for leave.
-5. *📊 Inventory Monitoring*: Workers check inventory and request restocking.
+
 
 ### **Manager Workflow**
 
