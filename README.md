@@ -125,8 +125,8 @@ The *Fuel Station Management System* is an *all-in-one* web-based application cr
       - Fuel Sales Management  
     </td>
     <td align="center">
-      <a href="https://github.com/username4">
-        <img src="https://github.com/username4.png?size=100" width="80" height="80" style="border-radius: 50%;" /><br />
+      <a href="https://github.com/IT21129544">
+        <img src="https://github.com/IT21129544.png?size=100" width="80" height="80" style="border-radius: 50%;" /><br />
         A.L.M Athulathmudali
       </a><br />
       Contributions:  
