@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import SidebarOrder from './SidebarOrderFuel'; // Adjust this path if needed
+import SidebarOrder from './SidebarOrder'; // Adjust this path if needed
 
 const PlaceNewItemOrder = () => {
     const [itemName, setItemName] = useState('');
