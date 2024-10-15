@@ -258,6 +258,19 @@ export default function PromoDetails() {
     }],
   };
 
+  const pieChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0
+      }
+    }
+  };
+
   // Data for Histogram (Bar Chart)
   const barChartData = {
     labels: promo.map(p => p.promo_code),
@@ -288,6 +301,12 @@ export default function PromoDetails() {
                 <span>Promo Details</span>
               </Link>
             </li>
+            <li>
+              <Link to="/admin-welcome/ExpiredPromo">
+                <i className="fas fa-clock"></i>
+                <span>Expired Promos</span>
+              </Link>
+            </li>
           </ul>
         </nav>
 
@@ -296,54 +315,52 @@ export default function PromoDetails() {
       <h1>Promo Details</h1>
 
       <div className="chart-containers">
-        {/* Pie Chart for Promo Code Types */}
         <div className="chart">
-        <div className="chart-header">
+          <div className="chart-header">
             <h3>Promo Code Distribution by Type</h3>
-            <button className="download-chart-btn" onClick={() => downloadChartAsPDF(pieChartRef, 'promo_distribution', 'Promo Code Distribution by Type')}>
-              <FaDownload />
-            </button>
           </div>
-          <div className="above">
+          <button className="download-chart-btn" onClick={() => downloadChartAsPDF(pieChartRef, 'promo_distribution', 'Promo Code Distribution by Type')}>
+            <FaDownload />
+          </button>
           <div className="pieChart">
-        <Pie data={pieChartData} ref={pieChartRef} />
-        </div>
-        </div>
+            <Pie data={pieChartData} options={pieChartOptions} ref={pieChartRef} />
+          </div>
         </div>
 
-        {/* Bar Chart for Validity Period */}
         <div className="charts">
-        <div className="chart-headers">
+          <div className="chart-headers">
             <h3>Promo Code Validity Period</h3>
-            <button className="download-chart-btn" onClick={() => downloadChartAsPDF(barChartRef, 'promo_validity', 'Promo Code Validity Period')}>
-              <FaDownload />
-            </button>
           </div>
-          <div className="above">
+          <button className="download-chart-btn" onClick={() => downloadChartAsPDF(barChartRef, 'promo_validity', 'Promo Code Validity Period')}>
+            <FaDownload />
+          </button>
           <div className="barChart">
-          <Bar data={barChartData} options={{
-            scales: {
-              x: {
-                title: {
-                  display: true,
-                  text: 'Promo Codes',
+            <Bar 
+              data={barChartData} 
+              options={{
+                scales: {
+                  x: {
+                    title: {
+                      display: true,
+                      text: 'Promo Codes',
+                    },
+                  },
+                  y: {
+                    title: {
+                      display: true,
+                      text: 'Days',
+                    },
+                    beginAtZero: true,
+                  },
                 },
-              },
-              y: {
-                title: {
-                  display: true,
-                  text: 'Days',
-                },
-                beginAtZero: true,
-              },
-            },
-          }} 
-          ref={barChartRef}
-          />
+                maintainAspectRatio: false,
+              }} 
+              ref={barChartRef}
+            />
+          </div>
         </div>
       </div>
-      </div>
-</div>
+
       <div className="Lasitha-search-bar">
   <input 
     type="text" 
@@ -353,7 +370,7 @@ export default function PromoDetails() {
     onChange={handleSearch} 
   />
   <button className="filter-btn" onClick={() => setShowFilters(!showFilters)}>
-    <i className="fa fa-filter"></i>
+    <i className="fa fa-filter"></i> Filter
   </button>
 </div>
 
@@ -404,7 +421,7 @@ export default function PromoDetails() {
           <p>Start Date: {moment(promoCode.promo_startDate).format("YYYY-MM-DD")}</p>
           <p>End Date: {moment(promoCode.promo_endDate).format("YYYY-MM-DD")}</p>
           <p>Remaining Validity: {remainingDays} days</p>
-          <p>Usage Limit: {promoCode.promo_expire}</p>
+          <p>Remaining Uses: {promoCode.promo_expire}</p>
             <div className="actions">
               <button className="update-btn" onClick={() => handleUpdate(promoCode)}>Update</button>
               <button className="delete-btn" onClick={() => handleDelete(promoCode._id)}>Delete</button>

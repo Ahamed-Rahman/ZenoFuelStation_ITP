@@ -46,6 +46,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import PromoDetails from './components/promotions/PromoDetails';
 import UpdatePromo from './components/promotions/UpdatePromo';
 import DeletePromo from './components/promotions/DeletePromo';
+import ExpiredPromo from './components/promotions/ExpiredPromo';
 import AddPromo from './components/promotions/AddPromo';
 import OrderManagementPage from './components/Order management/OrderManagementPage';
 import AddNewOrdersPage from './components/Order management/AddNewOrdersPage';
@@ -156,6 +157,8 @@ const App = () => {
                 <Route path="addPromo" element={<AddPromo />} />
                 <Route path="PromoDetails" element={<PromoDetails />} />
                <Route path="UpdatePromo/:id" element={<UpdatePromo />} />
+               <Route path="ExpiredPromo" element={<ExpiredPromo />} />
+               <Route path="deletePromo/:id" element={<DeletePromo />} />
                
                <Route path="deletePromo/:id" element={<DeletePromo />} />
                <Route path="view" element={<ViewPackages />} />  

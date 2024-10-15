@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import './AddPromo.css';
+import './PromoDetails.css'; // Import PromoDetails.css to use its styles
 
 export default function AddPromo() {
     const [promo_code, setPromoName] = useState("");
@@ -21,6 +22,7 @@ export default function AddPromo() {
     const [showMinAmountSuccessPopup, setShowMinAmountSuccessPopup] = useState(false);
     const [promoValueError, setPromoValueError] = useState(""); // State for promo value error
     const [showMinAmountContainer, setShowMinAmountContainer] = useState(false); // New state for showing min amount container
+    const [expireError, setExpireError] = useState(""); // State for usage limit error
 
     const sendData = (e) => {
         e.preventDefault();
@@ -118,6 +120,26 @@ export default function AddPromo() {
         if (promo_type === "Percentage" && Number(value) > 100) {
             setPromoValueError("Percentage cannot be more than 100.");
         }
+
+        checkFormValidity();
+    };
+
+    const handleExpireChange = (e) => {
+        const value = e.target.value;
+
+        // Check if the input is a number
+        if (value === "" || !isNaN(value)) {
+            setExpireNo(value);
+            if (Number(value) <= 0) {
+                setExpireError("Enter a number greater than 0");
+            } else {
+                setExpireError(""); // Clear error if valid number
+            }
+        } else {
+            setExpireError("Enter a valid number"); // Set error for invalid input
+        }
+
+        checkFormValidity();
     };
 
     function validateDates() {
@@ -139,7 +161,24 @@ export default function AddPromo() {
         }
 
         setIsFormValid(isValid);
+
+        checkFormValidity();
     }
+
+    const checkFormValidity = () => {
+        const isValid = 
+            promo_code.trim() !== "" &&
+            promo_value.trim() !== "" &&
+            !promoValueError &&
+            !startDateError &&
+            !endDateError &&
+            !expireError &&
+            promo_startDate &&
+            promo_endDate &&
+            promo_expire.trim() !== "";
+        
+        setIsFormValid(isValid);
+    };
 
     return (
         <div className="add-promo-page">
@@ -164,7 +203,7 @@ export default function AddPromo() {
                 </div>
             )}
         <div className="add-promo-layout">
-            <nav className="add-promo-side-nav">
+            <nav className="promo-details-side-nav"> {/* Use the same class as in PromoDetails */}
                     <div className="nav-header">
                         <h3>Navigation</h3>
                     </div>
@@ -180,6 +219,12 @@ export default function AddPromo() {
                                 <i className="fas fa-list"></i>
                                 <span>Promo Details</span>
                             </Link>
+                        </li>
+                        <li>
+                        <Link to="/admin-welcome/ExpiredPromo">
+                            <i className="fas fa-clock"></i>
+                            <span>Expired Promos</span>
+                        </Link>
                         </li>
                     </ul>
                 </nav>
@@ -222,7 +267,7 @@ export default function AddPromo() {
                         }}
                         onBlur={() => setStartDateTouched(true)}
                     />
-                    {startDateTouched && startDateError && <div className="invalid-feedback">{startDateError}</div>}
+                    {startDateTouched && startDateError && <div className="text-danger">{startDateError}</div>}
                 </div>
                 <div className="mb-3">
                     <label htmlFor="EndDate" className="form-label">End Date</label>
@@ -236,13 +281,21 @@ export default function AddPromo() {
                         }}
                         onBlur={() => setEndDateTouched(true)}
                     />
-                    {endDateTouched && endDateError && <div className="invalid-feedback">{endDateError}</div>}
+                    {endDateTouched && endDateError && <div className="text-danger">{endDateError}</div>}
                 </div>
                 <div className="mb-3">
                     <label for="ExpireNo" className="form-label">Usage Limit</label>
-                    <input type="text" className="form-control" id="promo_expire" placeholder="Set Usage Limit" onChange={(e) => setExpireNo(e.target.value)}/>
+                    <input 
+                        type="text" 
+                        className="form-control" 
+                        id="promo_expire" 
+                        placeholder="Set Usage Limit" 
+                        value={promo_expire}
+                        onChange={handleExpireChange} // Use the new handler
+                    />
+                    {expireError && <div className="text-danger">{expireError}</div>} {/* Error message */}
                 </div>
-                <button type="submit" className="btn btn-primary">Add Promo</button>
+                <button type="submit" className="btn btn-primary" disabled={!isFormValid}>Add Promo</button>
             </form>
             <button 
                 type="button" 

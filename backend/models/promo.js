@@ -36,6 +36,11 @@ const promoSchema = new Schema({
     promo_expire : {
         type : Number,
         required : true
+    },
+
+    promo_expire : {
+        type : Number,
+        required : true
     }
 
 })

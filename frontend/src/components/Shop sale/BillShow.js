@@ -4,7 +4,6 @@ import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import { useNavigate } from 'react-router-dom';
 import './viewBill.css';
-import logoImage from '../../assets/images/logo.png';
 
 const BillPage = () => {
     const navigate = useNavigate();
@@ -71,37 +70,29 @@ const BillPage = () => {
         }
     
         try {
-            const token = localStorage.getItem('token'); // Retrieve the token for authorization
-            const response = await axios.get(`http://localhost:5000/api/shop-sales/promos/${promoCode}`, {
+            const token = localStorage.getItem('token');
+            const response = await axios.post(`http://localhost:5000/Promotions/apply-promo`, {
+                promoCode,
+                totalPrice
+            }, {
                 headers: {
-                    Authorization: `Bearer ${token}` // Add the authorization token
+                    Authorization: `Bearer ${token}`
                 }
             });
     
-            const promo = response.data;
-    
-            // Check if promo is valid and contains necessary information
-            if (!promo || !promo.promo_value || !promo.promo_type) {
-                alert('Invalid promo code!');
-                return;
-            }
+            const { discountedPrice, message, updatedPromo } = response.data;
     
             // If promo is valid, set promo details and apply the discount
-            setPromoDetails(promo);
-            applyDiscount(promo);
+            setPromoDetails(updatedPromo);
+            setDiscountedPrice(discountedPrice);
+            setDiscountedAmount(totalPrice - discountedPrice);
+            alert(message); // Show success message
         } catch (error) {
-            // Detailed error logging for debugging
-            console.error('Error fetching promo details:', error);
-    
-            // Provide user-friendly error messages
-            if (error.response && error.response.status === 404) {
-                alert('Promo code not found!');
-            } else {
-                alert('An error occurred while applying the promo code. Please try again.');
-            }
+            console.error('Error applying promo code:', error);
+            alert(error.response?.data?.message || 'An error occurred while applying the promo code.');
         }
     };
-    
+
     const applyDiscount = (promo) => {
         let discountAmount = 0;
 
@@ -173,53 +164,24 @@ const BillPage = () => {
     
     const downloadBill = () => {
         const doc = new jsPDF();
-        const pageWidth = doc.internal.pageSize.getWidth(); // Get the page width
-        const margin = 20; // Margin for the bill layout
-    
-        // Add the logo in the top left corner
-        const logoSize = 30;
-        doc.addImage(logoImage, 'PNG', margin, margin, logoSize, logoSize); // Adjust logo position
-    
-        // Add the title below the logo
-        doc.setFontSize(16);
-        doc.setFont('Helvetica', 'bold');
-        doc.text('Sales Bill', margin + 70, margin + 30); // Positioned near the logo
-    
-        // Define the table content (sales items)
-        const tableData = sales.map(sale => [sale.itemName, sale.quantity, sale.unitPrice]);
+        doc.text('Sales Bill', 14, 16);
         
-        // Add the sales table
+        const tableData = sales.map(sale => [sale.itemName, sale.quantity, sale.unitPrice]);
         doc.autoTable({
             head: [['Item Name', 'Quantity', 'Unit Price']],
             body: tableData,
-            startY: margin + 40, // Start table below the title and logo
         });
-    
-        // Add total price
-        doc.setFontSize(12);
-        doc.text(`Total: ${totalPrice} Rs`, margin, doc.lastAutoTable.finalY + 10); // Position total below the table
-    
+
+        doc.text(`Total: ${totalPrice} Rs`, 14, doc.lastAutoTable.finalY + 10);
+        
         // Include discounted amount and discounted price if applicable
         if (discountedAmount > 0) {
-            doc.text(`Discount Amount: ${discountedAmount} Rs`, margin, doc.lastAutoTable.finalY + 20);
-            doc.text(`Discounted Price: ${discountedPrice} Rs`, margin, doc.lastAutoTable.finalY + 30);
+            doc.text(`Discount Amount: ${discountedAmount} Rs`, 14, doc.lastAutoTable.finalY + 20);
+            doc.text(`Discounted Price: ${discountedPrice} Rs`, 14, doc.lastAutoTable.finalY + 30);
         }
-    
-        // Add the "Thank You" message at the bottom and center it
-        const thankYouMessage = "Thank you for shopping with us!";
-        doc.setFontSize(14);
-        doc.setFont('Helvetica', 'italic');
-        doc.setTextColor(0, 102, 204); // Nice blue color for the thank you message
-        const textWidth = doc.getTextWidth(thankYouMessage); // Get the width of the text
-        const textXPosition = (pageWidth - textWidth) / 2; // Calculate the X position to center the text
-        doc.text(thankYouMessage, textXPosition, doc.lastAutoTable.finalY + 50); // Center the text
-    
-        // Save the PDF with the name 'bill.pdf'
+
         doc.save('bill.pdf');
     };
-    
-    
-    
 
     const handleViewOrders = async () => {
         try {
@@ -254,13 +216,7 @@ const BillPage = () => {
                 <tbody>
                 {Array.isArray(sales) && sales.map((sale) => (
                         <tr key={`${sale.itemId}-${sale.quantity}`}> {/* Updated key for uniqueness */}
-                           <td>
-                                <img 
-                                    src={`http://localhost:5000/uploads/${sale.photo.split('/').pop()}`} // Fix image URL construction
-                                    alt={sale.itemName}
-                                    style={{ width: '50px', height: '50px' }}
-                                />
-                            </td>
+                            <td><img src={`http://localhost:5000/uploads/${sale.photo}`} alt={sale.itemName} /></td>
                             <td>{sale.itemName}</td>
                             <td>{sale.quantity}</td>
                             <td>{sale.unitPrice}</td>

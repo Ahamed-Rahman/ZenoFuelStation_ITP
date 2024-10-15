@@ -37,13 +37,18 @@ router.route("/addPromo").post((req, res) => {
 
 
 //Display Promo Codes
-router.route("/displayPromo").get((req,res) => {
-
-    promo.find().then((promoCodes) => {
+router.route("/displayPromo").get((req, res) => {
+    const now = new Date();
+    promo.find({
+        $and: [
+            { promo_endDate: { $gt: now } }, // Valid if end date is in the future
+            { promo_expire: { $gt: 0 } }     // Valid if usage limit is greater than 0
+        ]
+    }).then((promoCodes) => {
         res.json(promoCodes);
     }).catch((err) => {
-        res.status(404).send({status: "Error with getting data", error: err.message});
-    })
+        res.status(404).send({ status: "Error with getting data", error: err.message });
+    });
     
 })
 
@@ -94,6 +99,61 @@ router.route("/getPromo/:promoId").get(async (req,res) => {
         res.status(404).send({status: "Promo Code not fetched!",error: err.message});
     })
 })
+
+// Get expired promotions
+router.get('/expiredPromos', async (req, res) => {
+    try {
+        const now = new Date();
+        const expiredPromos = await promo.find({
+            $or: [
+                { promo_endDate: { $lt: now } },
+                { promo_expire: 0 }
+            ]
+        }).select('promo_code promo_type promo_value promo_endDate promo_expire'); // Make sure promo_code is included
+
+        res.json(expiredPromos);
+    } catch (error) {
+        res.status(500).json({ message: 'Error fetching expired promotions', error });
+    }
+});
+
+// Apply promo code
+router.post('/apply-promo', async (req, res) => {
+    const { promoCode, totalPrice } = req.body;
+
+    try {
+        const promoDoc = await promo.findOne({ promo_code: promoCode });
+
+        if (!promoDoc) {
+            return res.status(404).json({ message: 'Promo code not found' });
+        }
+
+        const currentDate = new Date();
+        if (promoDoc.promo_endDate < currentDate || promoDoc.promo_expire <= 0) {
+            return res.status(400).json({ message: 'Promo code has expired or reached usage limit' });
+        }
+
+        let discountedPrice = totalPrice;
+        if (promoDoc.promo_type === 'Percentage') {
+            discountedPrice = totalPrice - (totalPrice * promoDoc.promo_value / 100);
+        } else if (promoDoc.promo_type === 'Fixed') {
+            discountedPrice = totalPrice - promoDoc.promo_value;
+        }
+
+        // Decrease usage limit
+        promoDoc.promo_expire -= 1;
+        await promoDoc.save();
+
+        res.json({
+            discountedPrice: discountedPrice,
+            message: `Promo code applied. Discounted price: $${discountedPrice.toFixed(2)}`,
+            updatedPromo: promoDoc
+        });
+    } catch (error) {
+        console.error('Error applying promo code:', error);
+        res.status(500).json({ message: 'Error applying promo code' });
+    }
+});
 
 // exports Data
 module.exports = router;

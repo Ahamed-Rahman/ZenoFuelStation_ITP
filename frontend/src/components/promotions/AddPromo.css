@@ -216,6 +216,10 @@ margin-top: 5px; /* Space above the success message */
 margin-left: 0; /* Reset left margin */
 }
 
+.text-danger {
+  color: red; /* Set text color to red */
+}
+
 
 @keyframes tick-animation {
 0% { transform: scale(0); }
