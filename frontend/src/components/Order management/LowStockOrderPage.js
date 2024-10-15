@@ -120,7 +120,7 @@ const ShopInventoryPage = () => {
   return (
     <SidebarOrder>
     <div className="place-new-order-page">
-      <h1>Shop Inventory Management</h1>
+      <h1>Shop Low stock orders</h1>
 
     
 

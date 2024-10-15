@@ -197,7 +197,7 @@ router.post('/received-orders/:id/add-to-inventory', async (req, res) => {
 
         let shopItem = await ShopInventory.findOne({ itemName: receivedOrder.itemName });
         if (shopItem) {
-            shopItem.quantityAvailable += quantity;
+            shopItem.quantityAvailable = quantity;
             await shopItem.save();
         } else {
             shopItem = new ShopInventory({

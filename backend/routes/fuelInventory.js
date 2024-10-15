@@ -30,8 +30,7 @@ router.post('/add', async (req, res) => {
     !itemName ||
     typeof total !== 'number' || total < 0 || // total should not have a default
     typeof sold !== 'number' || sold < 0 ||
-    total < 0 ||
-    sold < 0 ||
+   
     !dateAdded ||
     typeof wholesalePrice !== 'number' ||
     wholesalePrice < 0

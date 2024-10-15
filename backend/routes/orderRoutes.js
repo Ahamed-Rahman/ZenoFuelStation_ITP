@@ -185,7 +185,8 @@ router.post('/received-orders/:id/addToInventory', authenticateToken, async (req
     let inventoryItem = await FuelInventory.findOne({ itemName: receivedOrder.itemName });
     if (inventoryItem) {
       // Update the available quantity without affecting the total
-      inventoryItem.available += quantity;  // Increment available quantity
+      inventoryItem.available = quantity;  // Increment available quantity
+      inventoryItem.total = quantity;
       await inventoryItem.save();
     } else {
       inventoryItem = new FuelInventory({
