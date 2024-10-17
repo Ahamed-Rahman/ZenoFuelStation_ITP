@@ -202,7 +202,7 @@ export default function PromoDetails() {
     doc.save('promo_report.pdf');
   };
 
-  const downloadChartAsPDF = (chartRef, filename, title) => {
+  const downloadChartAsPDF = (chartRef, filename, title, isBarChart = false) => {
     const chart = chartRef.current;
     if (!chart) {
       console.error('Chart reference is not available');
@@ -230,16 +230,42 @@ export default function PromoDetails() {
     const aspectRatio = canvas.width / canvas.height;
 
     // Set the width of the chart in the PDF (leaving margins)
-    const pdfWidth = (pdf.internal.pageSize.getWidth() - 40) * 0.8; // 20mm margins on each side
+    const pdfWidth = pdf.internal.pageSize.getWidth() - 40; // 20mm margins on each side
     const pdfHeight = pdfWidth / aspectRatio;
 
     // Calculate the x-position to center the chart
     const xPosition = (pdf.internal.pageSize.getWidth() - pdfWidth) / 2;
-    const yPosition = (pdf.internal.pageSize.getHeight() - pdfHeight) / 2 + 10;
+    const yPosition = 25;
 
     // Add the chart image to the PDF
     const imgData = canvas.toDataURL('image/png');
     pdf.addImage(imgData, 'PNG', xPosition, yPosition, pdfWidth, pdfHeight);
+
+    // Prepare table data
+    let tableData;
+    if (isBarChart) {
+      tableData = promo.map(p => [p.promo_code, calculateRemainingDays(p.promo_endDate)]);
+      tableData.unshift(['Promo Code', 'Remaining Days']); // Add header row
+    } else {
+      const percentageCount = promo.filter(p => p.promo_type === 'Percentage').length;
+      const fixedCount = promo.filter(p => p.promo_type === 'Fixed').length;
+      tableData = [
+        ['Promo Type', 'Count'],
+        ['Percentage', percentageCount],
+        ['Fixed', fixedCount]
+      ];
+    }
+
+    // Add table below the chart
+    pdf.autoTable({
+      startY: yPosition + pdfHeight + 10,
+      head: [tableData[0]],
+      body: tableData.slice(1),
+      theme: 'grid',
+      headStyles: { fillColor: [22, 160, 133], textColor: [255, 255, 255] },
+      alternateRowStyles: { fillColor: [240, 240, 240] },
+      margin: { top: 10 },
+    });
 
     // Save the PDF
     pdf.save(`${filename}.pdf`);
@@ -256,6 +282,19 @@ export default function PromoDetails() {
       backgroundColor: ['#36A2EB', '#FF6384'],
       hoverOffset: 4,
     }],
+  };
+
+  const pieChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0
+      }
+    }
   };
 
   // Data for Histogram (Bar Chart)
@@ -288,6 +327,12 @@ export default function PromoDetails() {
                 <span>Promo Details</span>
               </Link>
             </li>
+            <li>
+              <Link to="/admin-welcome/ExpiredPromo">
+                <i className="fas fa-clock"></i>
+                <span>Expired Promos</span>
+              </Link>
+            </li>
           </ul>
         </nav>
 
@@ -296,54 +341,52 @@ export default function PromoDetails() {
       <h1>Promo Details</h1>
 
       <div className="chart-containers">
-        {/* Pie Chart for Promo Code Types */}
         <div className="chart">
-        <div className="chart-header">
+          <div className="chart-header">
             <h3>Promo Code Distribution by Type</h3>
-            <button className="download-chart-btn" onClick={() => downloadChartAsPDF(pieChartRef, 'promo_distribution', 'Promo Code Distribution by Type')}>
-              <FaDownload />
-            </button>
           </div>
-          <div className="above">
+          <button className="download-chart-btn" onClick={() => downloadChartAsPDF(pieChartRef, 'promo_distribution', 'Promo Code Distribution by Type')}>
+            <FaDownload />
+          </button>
           <div className="pieChart">
-        <Pie data={pieChartData} ref={pieChartRef} />
-        </div>
-        </div>
+            <Pie data={pieChartData} options={pieChartOptions} ref={pieChartRef} />
+          </div>
         </div>
 
-        {/* Bar Chart for Validity Period */}
         <div className="charts">
-        <div className="chart-headers">
+          <div className="chart-headers">
             <h3>Promo Code Validity Period</h3>
-            <button className="download-chart-btn" onClick={() => downloadChartAsPDF(barChartRef, 'promo_validity', 'Promo Code Validity Period')}>
-              <FaDownload />
-            </button>
           </div>
-          <div className="above">
+          <button className="download-chart-btn" onClick={() => downloadChartAsPDF(barChartRef, 'promo_validity', 'Promo Code Validity Period', true)}>
+            <FaDownload />
+          </button>
           <div className="barChart">
-          <Bar data={barChartData} options={{
-            scales: {
-              x: {
-                title: {
-                  display: true,
-                  text: 'Promo Codes',
+            <Bar 
+              data={barChartData} 
+              options={{
+                scales: {
+                  x: {
+                    title: {
+                      display: true,
+                      text: 'Promo Codes',
+                    },
+                  },
+                  y: {
+                    title: {
+                      display: true,
+                      text: 'Days',
+                    },
+                    beginAtZero: true,
+                  },
                 },
-              },
-              y: {
-                title: {
-                  display: true,
-                  text: 'Days',
-                },
-                beginAtZero: true,
-              },
-            },
-          }} 
-          ref={barChartRef}
-          />
+                maintainAspectRatio: false,
+              }} 
+              ref={barChartRef}
+            />
+          </div>
         </div>
       </div>
-      </div>
-</div>
+
       <div className="Lasitha-search-bar">
   <input 
     type="text" 
@@ -353,7 +396,7 @@ export default function PromoDetails() {
     onChange={handleSearch} 
   />
   <button className="filter-btn" onClick={() => setShowFilters(!showFilters)}>
-    <i className="fa fa-filter"></i>
+    <i className="fa fa-filter"></i> Filter
   </button>
 </div>
 
@@ -404,7 +447,7 @@ export default function PromoDetails() {
           <p>Start Date: {moment(promoCode.promo_startDate).format("YYYY-MM-DD")}</p>
           <p>End Date: {moment(promoCode.promo_endDate).format("YYYY-MM-DD")}</p>
           <p>Remaining Validity: {remainingDays} days</p>
-          <p>Usage Limit: {promoCode.promo_expire}</p>
+          <p>Remaining Uses: {promoCode.promo_expire}</p>
             <div className="actions">
               <button className="update-btn" onClick={() => handleUpdate(promoCode)}>Update</button>
               <button className="delete-btn" onClick={() => handleDelete(promoCode._id)}>Delete</button>

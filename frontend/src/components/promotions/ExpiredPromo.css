@@ -1,0 +1,224 @@
+.expired-promo-page {
+    padding: 20px;
+    flex-grow: 1; /* Allow the page to grow */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100vh;
+}
+
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.promo-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.promo-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.promo-card p {
+    margin: 5px 0;
+}
+
+.promo-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.update-btn, .delete-btn {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.update-btn:hover, .delete-btn:hover {
+    opacity: 0.9;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Darker background for better contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px; /* Increased padding for a more spacious feel */
+    border-radius: 8px; /* Rounded corners */
+    width: 400px; /* Fixed width for consistency */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    animation: fadeIn 0.3s; /* Fade-in effect */
+}
+
+.modal h2 {
+    margin-bottom: 20px; /* Space below the title */
+    font-size: 1.5rem; /* Larger font size for the title */
+    color: #333; /* Darker color for better readability */
+}
+
+.modal label {
+    font-weight: bold; /* Bold labels for better visibility */
+    margin-top: 10px; /* Space above labels */
+}
+
+.modal input {
+    width: 100%; /* Full width for inputs */
+    padding: 10px; /* Padding for inputs */
+    margin-top: 5px; /* Space above inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Space above buttons */
+}
+
+.modal-actions button {
+    background-color: #007bff; /* Primary button color */
+    border: none;
+    color: white;
+    padding: 10px 15px; /* Padding for buttons */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.modal-actions button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.modal-actions button.cancel {
+    background-color: #dc3545; /* Red color for cancel button */
+}
+
+.modal-actions button.cancel:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Optional: Add fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.table-container {
+    max-height: 400px; /* Adjust height as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc; /* Optional: Add border */
+    border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+.promo-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.promo-table th, .promo-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.promo-table th {
+    background-color: #f2f2f2; /* Optional: Header background color */
+}
+
+.update-btn, .delete-btn {
+    margin-right: 5px; /* Space between buttons */
+}
+
+
+.expired-promo-layout {
+    display: flex;
+    gap: 5px;
+    padding-top: 20px;
+}
+
+.promo-details-side-nav {
+    width: 200px; /* Fixed width for the sidebar */
+    background-color: #1b4989; /* Sidebar background color */
+    color: white; /* Text color */
+    padding: 20px; /* Padding inside the sidebar */
+    border-radius: 0 10px 10px 0; /* Rounded corners */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    height: auto; /* Auto height */
+    position: sticky; /* Sticky positioning */
+    top: 20px; /* Distance from the top */
+    left: 0; /* Align to the left */
+    margin-top: 20px; /* Margin from the top */
+}
+
+.promo-details-side-nav .nav-header {
+    padding-bottom: 20px; /* Space below the header */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Bottom border */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+.promo-details-side-nav .nav-header h3 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.2em; /* Header font size */
+}
+
+.promo-details-side-nav ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+.promo-details-side-nav li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+.promo-details-side-nav a {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    padding: 10px; /* Padding for links */
+    color: white; /* Link text color */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s; /* Transition effect */
+    border-radius: 5px; /* Rounded corners for links */
+}
+
+.promo-details-side-nav a:hover,
+.promo-details-side-nav a.active {
+    background-color: rgba(255, 255, 255, 0.1); /* Background color on hover or active */
+}
+
+.promo-details-side-nav i {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 1.2em; /* Icon size */
+}
+
+.expired-promo-container {
+    flex-grow: 1; /* Allow the container to take the remaining space */
+    padding: 30px; /* Padding for the content */
+    background-color: #f5f5f5; /* Background color for the content area */
+    margin-left: 0; /* Remove left margin */
+    margin-top: 20px; /* Margin from the top */
+    width: 100%; /* Allow the container to take full width */
+}

@@ -17,11 +17,12 @@ export default function UpdatePromo() {
   const [promo_expire, setExpireNo] = useState("");
   const [startDateError, setStartDateError] = useState("");
   const [endDateError, setEndDateError] = useState("");
-  const [isFormValid, setIsFormValid] = useState(true);
+  const [isFormValid, setIsFormValid] = useState(false); // Change initial state to false
   const [startDateTouched, setStartDateTouched] = useState(false);
   const [endDateTouched, setEndDateTouched] = useState(false);
   const [promoValueError, setPromoValueError] = useState(""); // State for promo value error
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [expireError, setExpireError] = useState(""); // State for usage limit error
 
   useEffect(() => {
     const token = localStorage.getItem("token"); // Ensure you have stored the token in localStorage
@@ -50,6 +51,7 @@ export default function UpdatePromo() {
 
   const handleInputChange = (setter) => (e) => {
     setter(e.target.value);
+    checkFormValidity();
   };
 
   const handlePromoValueChange = (e) => {
@@ -59,14 +61,34 @@ export default function UpdatePromo() {
     if (value === "" || !isNaN(value)) {
       setPromoValue(value);
       setPromoValueError(""); // Clear error if valid number or empty
+
+      // Additional check for percentage limit
+      if (promo_type === "Percentage" && Number(value) > 100) {
+        setPromoValueError("Percentage cannot be more than 100.");
+      } else {
+        setPromoValueError(""); // Clear error if valid
+      }
     } else {
       setPromoValueError("Please enter a valid number."); // Set error for invalid input
     }
+    checkFormValidity();
+  };
 
-    // Additional check for percentage limit
-    if (promo_type === "Percentage" && Number(value) > 100) {
-      setPromoValueError("Percentage cannot be more than 100.");
+  const handleExpireChange = (e) => {
+    const value = e.target.value;
+
+    // Check if the input is a number
+    if (value === "" || !isNaN(value)) {
+      setExpireNo(value);
+      if (Number(value) <= 0) {
+        setExpireError("Enter a number greater than 0");
+      } else {
+        setExpireError(""); // Clear error if valid number
+      }
+    } else {
+      setExpireError("Enter a valid number"); // Set error for invalid input
     }
+    checkFormValidity();
   };
 
   function validateDates() {
@@ -89,6 +111,21 @@ export default function UpdatePromo() {
 
     setIsFormValid(isValid);
   }
+
+  const checkFormValidity = () => {
+    const isValid = 
+      promo_code.trim() !== "" &&
+      promo_value.trim() !== "" &&
+      !promoValueError &&
+      !startDateError &&
+      !endDateError &&
+      !expireError &&
+      promo_startDate &&
+      promo_endDate &&
+      promo_expire.trim() !== "";
+    
+    setIsFormValid(isValid);
+  };
 
   const sendData = (e) => {
     e.preventDefault();
@@ -151,6 +188,12 @@ export default function UpdatePromo() {
               <span>Promo Details</span>
             </Link>
           </li>
+          <li>
+              <Link to="/admin-welcome/ExpiredPromo">
+                <i className="fas fa-clock"></i>
+                <span>Expired Promos</span>
+              </Link>
+          </li>
         </ul>
       </nav>
 
@@ -212,7 +255,7 @@ export default function UpdatePromo() {
                 }}
                 onBlur={() => setStartDateTouched(true)}
               />
-              {startDateTouched && startDateError && <div className="invalid-feedback">{startDateError}</div>}
+              {startDateTouched && startDateError && <div className="text-danger">{startDateError}</div>}
             </div>
             <div className="mb-3">
               <label htmlFor="EndDate" className="form-label">End Date</label>
@@ -227,17 +270,18 @@ export default function UpdatePromo() {
                 }}
                 onBlur={() => setEndDateTouched(true)}
               />
-              {endDateTouched && endDateError && <div className="invalid-feedback">{endDateError}</div>}
+              {endDateTouched && endDateError && <div className="text-danger">{endDateError}</div>}
             </div>
             <div className="mb-3">
               <label htmlFor="ExpireNo" className="form-label">Usage Limit</label>
               <input 
-                type="number" 
+                type="text" 
                 className="form-control" 
                 id="promo_expire" 
                 value={promo_expire} 
-                onChange={handleInputChange(setExpireNo)} 
+                onChange={handleExpireChange} // Use the new handler
               />
+              {expireError && <div className="text-danger">{expireError}</div>} {/* Error message */}
             </div>
             
             <button type="submit" className="btn btn-primary" disabled={!isFormValid}>Update Promo</button>

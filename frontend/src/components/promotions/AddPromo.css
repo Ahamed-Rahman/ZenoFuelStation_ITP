@@ -1,6 +1,7 @@
 .add-promo-layout {
   display: flex;
   min-height: 100vh;
+  padding-top: 20px;
   margin-bottom: 20px;
   
 }
@@ -214,6 +215,10 @@ margin-top: 5px; /* Space above the error message */
 color: green; /* Green color for success messages */
 margin-top: 5px; /* Space above the success message */
 margin-left: 0; /* Reset left margin */
+}
+
+.text-danger {
+  color: red; /* Set text color to red */
 }
 
 

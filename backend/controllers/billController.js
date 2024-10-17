@@ -295,7 +295,7 @@ exports.sendBillEmail = async (req, res) => {
     <body>
       <div class="email-container">
         <div class="header">
-          <img src="https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.jpg" alt="Company Logo">
+          
           <h1>Your Bill Details</h1>
         </div>
         <div class="content">

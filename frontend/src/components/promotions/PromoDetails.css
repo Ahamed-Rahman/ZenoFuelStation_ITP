@@ -1,52 +1,93 @@
 .promo-container {
   max-width: 1200px; /* Increased from 800px */
   margin: 40px auto;
-  padding: 30px; /* Increased from 20px */
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 40px; /* Increased from 20px */
+  background-color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
 }
 .promo-grid-container {
-  height: 700px; /* Set the height of the grid container */
+  height: fit-content; /* Set the height of the grid container */
   overflow-y: auto; /* Enable vertical scrolling */
   display: flex;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust columns as needed */
   gap: 16px; /* Space between grid items */
-  padding: 16px;
-  border: 1px solid #ccc; /* Optional: Add a border */
-  background-color: #f9f9f9; /* Optional: Background color */
-  border-radius: 8px; /* Optional: Rounded corners */
-  margin: auto;
+  padding: 20px;
+  border: 1px solid #e0e0e0; /* Optional: Add a border */
+  background-color: #fafafa; /* Optional: Background color */
+  border-radius: 10px; /* Optional: Rounded corners */
+  margin: 30px auto;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+  
 }
 
 
 .chart-containers {
   display: flex;
-  justify-content: space-between; /* Space charts evenly */
-  margin: 60px 0; /* Margin for spacing */
-  flex-wrap: nowrap; /* Prevent wrapping to keep charts in a single row */
-  padding: 20px; /* Added padding to the container */
-  background-color: #f5f5f5; /* Optional: Background color for the container */
-  border-radius: 10px; /* Optional: Rounded corners for the container */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Optional: Shadow for depth */
-  height: 400px;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px 0;
 }
 
-.chart {
-  flex: 1; /* Allow charts to grow equally */
-  min-width: 300px; /* Minimum width for responsiveness */
-  max-width: 48%; /* Set a maximum width to fit two charts side by side */
-  padding: 14px; /* Padding for better spacing */
-  margin-right: 20px; /* Space between charts */
-  background-color: #f9f9f9; /* Background color for charts */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-  height: 370px;
+.chart, .charts {
+  flex: 0 1 45%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  height: auto;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.chart-header, .chart-headers {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.chart-header h3, .chart-headers h3 {
+  font-size: 1.4em;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.download-chart-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #f0f0f0;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-chart-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.pieChart, .barChart {
+  width: 100%;
+  height: 280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pieChart canvas, .barChart canvas {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 h3{
@@ -67,24 +108,26 @@ h3{
 
 .chart-header{
 
-  width: 100px;
-  margin-left: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .chart-headers{
 
-  width: 150px;
-  margin-left: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .chart-headers h3{
-  margin-bottom: 10px;
-  font-size: 1.2em;
-  color: #000000;
-  margin-top: -10px;
-  margin-left: -50px;
-  text-align: center;
-  width: 400px;
+  font-size: 1.4em;
+  color: #333;
+  margin: 0;
 }
 
 .chart-headers button{
@@ -95,29 +138,31 @@ h3{
   margin-left: 300px;
 }
 .pieChart{
-  width: 300px;
-  height: 700px;
-  margin-bottom: 50px;
-  margin-left: 100px;
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
 }
 
 .barChart{
-  width: 500px;
-  height: 1800px;
-  margin-bottom: 50px;
-  margin-left: -10px;
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
 }
 
 .charts {
   flex: 1; /* Allow charts to grow equally */
   min-width: 300px; /* Minimum width for responsiveness */
   max-width: 48%; /* Set a maximum width to fit two charts side by side */
-  padding: 14px; /* Padding for better spacing */
+  padding: 20px; /* Padding for better spacing */
   margin-right: 20px; /* Space between charts */
-  background-color: #f9f9f9; /* Background color for charts */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-  height: 370px;
+  background-color: #ffffff; /* Background color for charts */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  height: auto;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 
@@ -130,46 +175,62 @@ h3{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px; /* Added space between search bar and filter button */
-  padding: 5px;
+  margin-bottom: 30px; /* Added space between search bar and filter button */
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
 }
 
 .Lasitha-search {
-  width: 500px;
-  height: 30px;
-  padding: 5px;
-  font-size: 18px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  width: calc(100% - 120px); /* Adjusted to leave space for the button */
+  height: 40px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  transition: border-color 0.3s ease;
+}
+
+.Lasitha-search:focus {
+  outline: none;
+  border-color: #007bff;
 }
 
 .promo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 25px;
   flex-grow: 1;
 }
 
 .promo-code {
-  background-color: #FFFFC2; 
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fcfb9a; 
+  padding: 25px;
+  border: 1px solid black;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 350px;
 }
 
+.promo-code:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
 .promo-code h2 {
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 1.4em;
+  color: #333;
+  margin-bottom: 15px;
 }
 
 .promo-code p {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  color: #555;
 }
 
 .promo-code .actions {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .actions {
@@ -195,13 +256,18 @@ h3{
 }
 
 .update-btn, .delete-btn {
-  width: 100px;
+  width: 110px;
   height: 40px;
   padding: 10px;
-  font-size: 18px;
+  font-size: 14px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.update-btn:hover, .delete-btn:hover {
+  transform: translateY(-2px);
 }
 
 .update-btn {
@@ -233,20 +299,28 @@ h3{
 }
 
 .filter-btn {
-  padding: 8px 16px;
+  padding: 10px 15px;
   background-color: #1abc9c;
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 4px;
-  margin-left: 15px; /* Space between search bar and filter button */
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  margin-left: 15px; /* Add space between search bar and button */
+}
+
+.filter-btn:hover {
+  background-color: #16a085;
 }
 
 .filters {
-  margin-top: 20px; /* Space between promo codes and filters */
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
   display: flex;
-  gap: 30px; /* Adjusted space between dropdowns */
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .filter-group {
@@ -260,12 +334,13 @@ h3{
 }
 
 .filter-group select {
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #ffffff;
   font-size: 14px;
   transition: all 0.3s ease;
+  width: 200px;
 }
 
 .filter-group select:focus {
@@ -286,16 +361,16 @@ h3{
 }
 
 .download-chart-btn {
-  background: none;
+  background-color: #f0f0f0;
   border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 1.2rem;
-  color: #333;
-  transition: color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .download-chart-btn:hover {
-  color: #007bff;
+  background-color: #e0e0e0;
 }
 
 .promo-details-page {
