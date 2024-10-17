@@ -124,7 +124,7 @@ export default function ExpiredPromo() {
   };
 
   return (
-    <div className="promo-details-layout">
+    <div className="expired-promo-layout">
       <nav className="promo-details-side-nav">
         <div className="nav-header">
           <h3>Navigation</h3>

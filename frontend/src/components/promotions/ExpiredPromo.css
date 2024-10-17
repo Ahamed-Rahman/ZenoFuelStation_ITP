@@ -153,9 +153,10 @@
 }
 
 
-.promo-details-layout {
+.expired-promo-layout {
     display: flex;
-    gap: 20px;
+    gap: 5px;
+    padding-top: 20px;
 }
 
 .promo-details-side-nav {

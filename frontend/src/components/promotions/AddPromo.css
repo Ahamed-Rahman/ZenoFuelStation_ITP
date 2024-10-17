@@ -1,6 +1,7 @@
 .add-promo-layout {
   display: flex;
   min-height: 100vh;
+  padding-top: 20px;
   margin-bottom: 20px;
   
 }

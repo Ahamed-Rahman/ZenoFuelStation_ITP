@@ -202,7 +202,7 @@ export default function PromoDetails() {
     doc.save('promo_report.pdf');
   };
 
-  const downloadChartAsPDF = (chartRef, filename, title) => {
+  const downloadChartAsPDF = (chartRef, filename, title, isBarChart = false) => {
     const chart = chartRef.current;
     if (!chart) {
       console.error('Chart reference is not available');
@@ -230,16 +230,42 @@ export default function PromoDetails() {
     const aspectRatio = canvas.width / canvas.height;
 
     // Set the width of the chart in the PDF (leaving margins)
-    const pdfWidth = (pdf.internal.pageSize.getWidth() - 40) * 0.8; // 20mm margins on each side
+    const pdfWidth = pdf.internal.pageSize.getWidth() - 40; // 20mm margins on each side
     const pdfHeight = pdfWidth / aspectRatio;
 
     // Calculate the x-position to center the chart
     const xPosition = (pdf.internal.pageSize.getWidth() - pdfWidth) / 2;
-    const yPosition = (pdf.internal.pageSize.getHeight() - pdfHeight) / 2 + 10;
+    const yPosition = 25;
 
     // Add the chart image to the PDF
     const imgData = canvas.toDataURL('image/png');
     pdf.addImage(imgData, 'PNG', xPosition, yPosition, pdfWidth, pdfHeight);
+
+    // Prepare table data
+    let tableData;
+    if (isBarChart) {
+      tableData = promo.map(p => [p.promo_code, calculateRemainingDays(p.promo_endDate)]);
+      tableData.unshift(['Promo Code', 'Remaining Days']); // Add header row
+    } else {
+      const percentageCount = promo.filter(p => p.promo_type === 'Percentage').length;
+      const fixedCount = promo.filter(p => p.promo_type === 'Fixed').length;
+      tableData = [
+        ['Promo Type', 'Count'],
+        ['Percentage', percentageCount],
+        ['Fixed', fixedCount]
+      ];
+    }
+
+    // Add table below the chart
+    pdf.autoTable({
+      startY: yPosition + pdfHeight + 10,
+      head: [tableData[0]],
+      body: tableData.slice(1),
+      theme: 'grid',
+      headStyles: { fillColor: [22, 160, 133], textColor: [255, 255, 255] },
+      alternateRowStyles: { fillColor: [240, 240, 240] },
+      margin: { top: 10 },
+    });
 
     // Save the PDF
     pdf.save(`${filename}.pdf`);
@@ -331,7 +357,7 @@ export default function PromoDetails() {
           <div className="chart-headers">
             <h3>Promo Code Validity Period</h3>
           </div>
-          <button className="download-chart-btn" onClick={() => downloadChartAsPDF(barChartRef, 'promo_validity', 'Promo Code Validity Period')}>
+          <button className="download-chart-btn" onClick={() => downloadChartAsPDF(barChartRef, 'promo_validity', 'Promo Code Validity Period', true)}>
             <FaDownload />
           </button>
           <div className="barChart">
