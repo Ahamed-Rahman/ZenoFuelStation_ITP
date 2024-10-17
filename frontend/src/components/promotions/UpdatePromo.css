@@ -81,10 +81,12 @@
   flex-grow: 1;
   padding: 20px;
   background-color: #f5f5f5;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 /* Keep all existing styles below this line */
-.container {
+.promocontainer {
   max-width: 800px;
   margin: 0 auto;
   margin-top: 10px
