@@ -198,7 +198,7 @@ export default function UpdatePromo() {
       </nav>
 
       <div className="update-promo-container">
-        <div className="container">
+        <div className="promocontainer">
           <div className="promo-box" style={{ backgroundColor: "#ffffcc", padding: "20px", borderRadius: "8px", marginBottom: "20px" }}>
             <h3>Promo Code: {promo_code || "N/A"}</h3>
             <p>Type: {promo_type || "N/A"}</p>
