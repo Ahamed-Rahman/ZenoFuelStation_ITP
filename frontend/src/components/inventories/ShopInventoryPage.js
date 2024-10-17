@@ -16,6 +16,8 @@ const ShopInventoryPage = ({ isManager }) => {
     const navigate = useNavigate();
     const [items, setItems] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
+    const [showLowStock, setShowLowStock] = useState(false);
+
     const [loading, setLoading] = useState(true);
     
 
@@ -43,7 +45,7 @@ const ShopInventoryPage = ({ isManager }) => {
                 }));
 
                 itemsWithSequentialId.forEach(item => {
-                    if (item.quantityAvailable < 10) {
+                    if (item.quantityAvailable < 20) {
                         alertOrderManagement(item);
                     }
                 });
@@ -157,7 +159,7 @@ const generateReport = async () => {
   
       // Calculate total items and low stock items
       const totalItems = items.length;
-      const totalLowStockItems = items.filter(item => item.quantityAvailable < 10).length;
+      const totalLowStockItems = items.filter(item => item.quantityAvailable < 20).length;
   
       const doc = new jsPDF();
   
@@ -297,9 +299,12 @@ const generateReport = async () => {
   
     
 
-    const filteredItems = items.filter(item =>
-        item.itemName?.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+  const filteredItems = items.filter(item => {
+    const matchesSearch = item.itemName?.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesLowStock = showLowStock ? item.quantityAvailable < 20 : true; // Adjust threshold if needed
+    return matchesSearch && matchesLowStock;
+});
+
 
     if (loading) return <p>Loading...</p>;
 
@@ -326,6 +331,17 @@ const generateReport = async () => {
             onChange={(e) => setSearchTerm(e.target.value)}
             className={styles.AhamedSearch}
           />
+
+           {/* Low Stock Filter Checkbox */}
+  <label className={styles.AhamedSearchLabe2}>
+    <input
+      type="checkbox"
+      checked={showLowStock}
+      className={styles.AhamedSearch2}
+      onChange={(e) => setShowLowStock(e.target.checked)}
+    />
+    Show Low Stock Only
+  </label>
         </div>
 
         <div className={styles.AhamedinventoryActions}>
@@ -358,7 +374,7 @@ const generateReport = async () => {
        <td>{item.itemName ?? 'N/A'}</td>
        <td>{item.totalItems}</td>
        <td>{item.itemsSold}</td>
-       <td className={item.quantityAvailable < 10 ? styles.lowStock : ''}>
+       <td className={item.quantityAvailable < 20 ? styles.lowStock : ''}>
            {item.quantityAvailable}
        </td>
        <td>{item.purchasePrice}</td>

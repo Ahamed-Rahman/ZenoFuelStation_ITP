@@ -9,6 +9,7 @@ import './checkout.css';
 const CheckoutPage = () => {
     const location = useLocation();
     const navigate = useNavigate();
+    const [searchTerm, setSearchTerm] = useState('');
 
     const [pastSales, setPastSales] = useState([]);
     const [filteredSales, setFilteredSales] = useState([]);
@@ -45,21 +46,34 @@ const CheckoutPage = () => {
     }, [navigate]);
 
     // Function to handle the date search
-    const handleSearch = (e) => {
+    const handleSearchDate = (e) => {
         const searchValue = e.target.value;
         setSearchDate(searchValue);
-
-        if (searchValue) {
-            // Filter sales by the date input
-            const filtered = pastSales.filter(order => {
-                const orderDate = new Date(order.saleDate).toLocaleDateString();
-                return orderDate === new Date(searchValue).toLocaleDateString();
-            });
-            setFilteredSales(filtered);
-        } else {
-            setFilteredSales(pastSales); // If search is cleared, show all sales
-        }
+    
+        filterSales(searchValue, searchTerm);
     };
+    
+    const handleSearchTerm = (e) => {
+        const searchValue = e.target.value;
+        setSearchTerm(searchValue);
+    
+        filterSales(searchDate, searchValue);
+    };
+    
+    const filterSales = (date, term) => {
+        const filtered = pastSales.filter((order) => {
+            const matchesDate = date
+                ? new Date(order.saleDate).toLocaleDateString() === new Date(date).toLocaleDateString()
+                : true;
+            const matchesTerm = term
+                ? order.itemName.toLowerCase().includes(term.toLowerCase())
+                : true;
+            return matchesDate && matchesTerm;
+        });
+    
+        setFilteredSales(filtered);
+    };
+    
 
     const handleBack = () => {
         navigate('/admin-welcome/BillShow');
@@ -114,13 +128,26 @@ const CheckoutPage = () => {
             <h1 className="past-sales-title">Past Sales</h1>
             
             {/* Search bar for filtering by date */}
+
+   <div style={{ marginBottom: '20px', display: 'flex', gap: '10px', justifyContent: 'center' ,marginLeft: '-500px'}}>
+    <input
+        type="text"
+        className="seshan-search-bar"
+        value={searchTerm}
+        onChange={handleSearchTerm}
+        placeholder="Search by item name"
+        style={{ padding: '6px', borderRadius: '8px', border: '1px solid #ccc',marginLeft: '-10px' }}
+    />
             <input
                 type="date"
                 className="seshan-search-bar"
                 value={searchDate}
-                onChange={handleSearch}
+                onChange={handleSearchDate}
                 placeholder="Search by date"
+                style={{ padding: '6px', borderRadius: '8px', border: '1px solid #ccc',marginLeft: '10px' }}
             />
+            </div>
+
 
             {loading ? (
                 <p className="loading-message">Loading past sales...</p>

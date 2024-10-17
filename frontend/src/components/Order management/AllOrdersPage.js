@@ -11,6 +11,8 @@ const AllOrdersPage = () => {
   const [orders, setOrders] = useState([]);
   const [editingOrderId, setEditingOrderId] = useState(null);
   const [editingQuantity, setEditingQuantity] = useState(1);
+  const [statusFilter, setStatusFilter] = useState(''); // New state for status filter
+
   const [searchTerm, setSearchTerm] = useState('');
 
   // Fetch orders
@@ -72,10 +74,12 @@ const AllOrdersPage = () => {
     }
   };
 
-  const filteredOrders = orders.filter(order =>
-    order.itemName.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
+  const filteredOrders = orders.filter(order => {
+    const matchesSearch = order.itemName.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesStatus = statusFilter ? order.status === statusFilter : true;
+    return matchesSearch && matchesStatus;
+  });
+  
  // Function to generate the PDF report in table format
   // Function to generate the PDF report
   const generateReport = () => {
@@ -166,6 +170,17 @@ const AllOrdersPage = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
+
+           {/* Dropdown for status filter */}
+        <select
+            className="DanStatusFilter"
+            value={statusFilter}
+            onChange={(e) => setStatusFilter(e.target.value)}
+          >
+           <option value="">All Statuses</option>
+           <option value="Accepted">Accepted</option>
+           <option value="Pending">Pending</option>
+       </select>
         </div>
 
         <table className="place-new-order-page__table">

@@ -107,7 +107,14 @@
     font-weight: bold;
     font-size: 1.2em;
     color: #2c3e50;
-    margin-left: 350px;
+    text-align: center;
+}
+
+.seshanTotal1 {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #2c3e50;
+    text-align: center;
 }
 
 .seshanCode {
@@ -175,6 +182,3 @@
  
     font-size: 14px;
 }
-
-
-

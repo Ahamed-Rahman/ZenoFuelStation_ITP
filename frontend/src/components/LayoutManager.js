@@ -139,7 +139,7 @@ const LayoutManager = () => {
         
             
           <li><Link to="/manager-welcome/attendanceM" className={location.pathname.includes('User-management') ? 'active' : ''}>Attendance Management</Link></li>
-                     <li><Link to="/manager-welcome/Charts" className={location.pathname.includes('User-management') ? 'active' : ''}>User Management</Link></li>
+            
                     <li><Link to="/manager-welcome/MF" className={location.pathname.includes('inventory-management') ? 'active' : ''}>Inventory Management</Link></li>
                     <li><Link to="/manager-welcome/MFS" className={location.pathname.includes('sales-management') ? 'active' : ''}>Sales Management</Link></li>
                     <li><Link to="/manager-welcome/attendance-management" className={location.pathname === '/attendance-marking' ? 'active' : ''}>Attendance Marking</Link></li>

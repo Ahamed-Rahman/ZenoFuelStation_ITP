@@ -4,6 +4,9 @@ import Swal from 'sweetalert2';
 import './AdminDashboard.css';
 import { useNavigate } from 'react-router-dom';
 import SidebarLayoutShop from './SidebarLayoutShop.js';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
+import logoImage from '../../assets/images/logo.png'; // Import your logo
 
 const AdminShopOrdersDashboard = () => {
   const [receivedShopOrders, setReceivedShopOrders] = useState([]);
@@ -46,6 +49,81 @@ const AdminShopOrdersDashboard = () => {
     const matchesDate = dateFilter ? new Date(order.orderDate).toLocaleDateString() === new Date(dateFilter).toLocaleDateString() : true;
     return matchesStatus && matchesDate;
   });
+
+   // Function to generate the PDF report
+   const generatePDF = () => {
+    const doc = new jsPDF();
+
+    // Add the logo to the PDF
+    const logo = new Image();
+    logo.src = logoImage; // Imported logo
+    const logoSize = 30;
+    doc.addImage(logo, 'PNG', 10, 5, logoSize, logoSize); // Adjust position and size for the logo
+
+    // Center the title below the logo
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(20);
+    doc.setTextColor(40, 116, 166);
+    doc.text('Shop Orders Report', doc.internal.pageSize.getWidth() / 2, 40, { align: 'center' });
+
+    // Define table columns and rows
+    const tableColumn = [
+      'Item Name',
+      'Quantity',
+      'Wholesale Price (Rs)',
+      'Total Amount (Rs)',
+      'Received Date',
+      'Status'
+    ];
+    const tableRows = [];
+
+    filteredOrders.forEach((order) => {
+      const rowData = [
+        order.itemName,
+        order.quantity,
+        order.wholesalePrice ? `Rs ${order.wholesalePrice.toFixed(2)}` : 'N/A',
+        order.totalAmount ? `Rs ${order.totalAmount.toFixed(2)}` : 'N/A',
+        order.dateReceived ? new Date(order.dateReceived).toLocaleDateString('en-US') : 'Invalid Date',
+        order.status
+      ];
+      tableRows.push(rowData);
+    });
+
+    // Add table to PDF
+    doc.autoTable({
+      head: [tableColumn],
+      body: tableRows,
+      startY: 50, // Adjust startY to accommodate logo and title
+      theme: 'grid',
+      margin: { top: 10, bottom: 20 },
+      styles: {
+        font: 'helvetica',
+        fontSize: 10,
+        textColor: [40, 40, 40],
+        lineColor: [216, 216, 216],
+        lineWidth: 0.1,
+        cellPadding: 4,
+      },
+      headStyles: {
+        fillColor: [40, 116, 166],
+        textColor: [255, 255, 255],
+        fontStyle: 'bold',
+        halign: 'center',
+      },
+      bodyStyles: {
+        fillColor: [245, 245, 245],
+        valign: 'middle',
+        halign: 'center',
+      },
+      alternateRowStyles: {
+        fillColor: [255, 255, 255],
+      },
+    });
+
+    // Save the PDF with a meaningful name
+    doc.save('shop_orders_report.pdf');
+  };
+
 
   return (
     <SidebarLayoutShop>
@@ -102,6 +180,12 @@ const AdminShopOrdersDashboard = () => {
             ))}
           </tbody>
         </table>
+         {/* Generate Report Button */}
+         <div className="AhamedgenerateReportContainerOrder">
+          <button onClick={generatePDF} className="AhamedgenerateReportButtonOrders">
+            Generate Report
+          </button>
+        </div>
       </div>
     </SidebarLayoutShop>
   );

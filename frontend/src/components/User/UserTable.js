@@ -11,8 +11,13 @@ import bgdImage from '../../assets/images/simple.jpg';
 import Swal from 'sweetalert2'; // Import SweetAlert
 import EditProfileForm from './EditProfileForm';
 
+
 const UserTable = ({ userRole }) => {
     const [users, setUsers] = useState([]);
+    const [roleFilter, setRoleFilter] = useState(''); // Dropdown for role filter
+    const [usernameFilter, setUsernameFilter] = useState(''); // Filter by username
+    const [firstNameFilter, setFirstNameFilter] = useState(''); // Filter by first name
+
     const [selectedUser, setSelectedUser] = useState(null); // Store the selected user for report generation
     const [showForm, setShowForm] = useState(false); // Control form visibility
     const [disabledUsers, setDisabledUsers] = useState(() => {
@@ -58,7 +63,153 @@ const UserTable = ({ userRole }) => {
     }, [users]); // The effect runs when the users list is updated
 
 
- 
+    // Apply filters for role, username, and first name
+    const filteredUsers = users.filter((user) => {
+        const matchesRole = roleFilter ? user.role.toLowerCase() === roleFilter.toLowerCase() : true;
+        const matchesUsername = usernameFilter ? user.username.toLowerCase().includes(usernameFilter.toLowerCase()) : true;
+        const matchesFirstName = firstNameFilter ? user.firstName.toLowerCase().includes(firstNameFilter.toLowerCase()) : true;
+        return matchesRole && matchesUsername && matchesFirstName;
+    });
+
+    // Function to generate PDF report excluding the "Actions" column
+    const generatePDF = async () => {
+        const doc = new jsPDF();
+    
+        // Add the logo to the PDF
+        const logoSize = 30;
+        doc.addImage(logoImage, 'PNG', 10, 5, logoSize, logoSize); // Adjust position and size for the logo
+    
+        // Center the title below the logo
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(20);
+        doc.setTextColor(40, 116, 166);
+        doc.text('User Details Report', doc.internal.pageSize.getWidth() / 2, 40, { align: 'center' });
+    
+        // Define table columns excluding "Actions"
+        const tableColumn = [
+            'Profile Photo',
+            'First Name',
+            'Last Name',
+            'Username',
+            'Email',
+            'Account No',
+            'Bank Name',
+            'Bank Details',
+            'Role',
+        ];
+    
+        // Function to load image and convert to Base64
+        const loadImageAsBase64 = (url) => {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.crossOrigin = 'Anonymous';
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0);
+                    const base64String = canvas.toDataURL('image/jpeg');
+                    resolve(base64String);
+                };
+                img.onerror = (error) => {
+                    reject(error);
+                };
+                img.src = url;
+            });
+        };
+    
+        // Preload images and convert to Base64 before generating the table
+        const usersWithImages = await Promise.all(
+            filteredUsers.map(async (user) => {
+                const profilePhotoUrl = user.profilePhoto || '/assets/default-profile.png';
+                try {
+                    const base64Image = await loadImageAsBase64(profilePhotoUrl);
+                    return { ...user, profilePhotoBase64: base64Image };
+                } catch (error) {
+                    console.error('Error loading profile photo for', user.username, error);
+                    return { ...user, profilePhotoBase64: null }; // Fallback in case of error
+                }
+            })
+        );
+    
+        // Load images and add rows to the table
+        const tableRows = usersWithImages.map((user) => {
+            return [
+                user.profilePhotoBase64 ? 'Yes' : 'No', // Placeholder for the image
+                user.firstName,
+                user.lastName,
+                user.username,
+                user.email,
+                user.accountNo,
+                user.bankName,
+                user.bankDetails,
+                user.role,
+            ];
+        });
+    
+        // Add table to PDF with custom column widths and text alignment
+        doc.autoTable({
+            head: [tableColumn],
+            body: tableRows,
+            startY: 50, // Adjust startY to accommodate logo and title
+            theme: 'grid',
+            margin: { left: 20 }, 
+            columnStyles: {
+                0: { cellWidth: 15, halign: 'center' }, // Profile Photo column (centered)
+                1: { cellWidth: 15 }, // First Name
+                2: { cellWidth: 15 }, // Last Name
+                3: { cellWidth: 20 }, // Username
+                4: { cellWidth: 33 }, // Email (wider)
+                5: { cellWidth: 25 }, // Account No
+                6: { cellWidth: 15 }, // Bank Name
+                7: { cellWidth: 15 }, // Bank Details
+                8: { cellWidth: 15 }, // Role
+            },
+            didDrawCell: (data) => {
+                if (data.column.index === 0 && data.row.section === 'body') {
+                    const userIndex = data.row.index;
+                    const user = usersWithImages[userIndex];
+                    if (user.profilePhotoBase64) {
+                        const imgWidth = 10; // Set image width
+                        const imgHeight = 10; // Set image height
+                        const xOffset = data.cell.x + (data.cell.width - imgWidth) / 2; // Center horizontally
+                        const yOffset = data.cell.y + (data.cell.height - imgHeight) / 2; // Center vertically
+    
+                        doc.addImage(user.profilePhotoBase64, 'JPEG', xOffset, yOffset, imgWidth, imgHeight); // Add image inside the cell
+                    }
+                }
+            },
+            styles: {
+                font: 'helvetica',
+                fontSize: 5,
+                textColor: [40, 40, 40],
+                lineColor: [216, 216, 216],
+                lineWidth: 0.1,
+                cellPadding: 4,
+            },
+            headStyles: {
+                fillColor: [40, 116, 166],
+                textColor: [255, 255, 255],
+                fontStyle: 'bold',
+                halign: 'center',
+                valign: 'middle',
+            },
+            bodyStyles: {
+                fillColor: [245, 245, 245],
+                valign: 'middle',
+                halign: 'left', // Align text to the left for readability
+            },
+            alternateRowStyles: {
+                fillColor: [255, 255, 255],
+            },
+        });
+    
+        // Save the PDF
+        doc.save('user_details_report_with_photos.pdf');
+    };
+    
+    
 
 
     const generateIDCard = (user, shouldDownload = true) => {
@@ -171,6 +322,36 @@ const UserTable = ({ userRole }) => {
                 <div className={styles.UserTableHead}>
                     <h2>{userRole === 'Admin' ? 'Admin User Details' : 'User Details'}</h2>
                 </div>
+
+                    {/* Filters Section */}
+                    <div className={styles.shkfilterSection}>
+                    <select
+                        value={roleFilter}
+                        onChange={(e) => setRoleFilter(e.target.value)}
+                        className={styles.shkfilterSection2}
+                    >
+                        <option value="">All Roles</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Worker">Worker</option>
+                    </select>
+                    <input
+                        type="text"
+                        placeholder="Search by Username"
+                        value={usernameFilter}
+                        className={styles.shkfilterSection3}
+                        onChange={(e) => setUsernameFilter(e.target.value)}
+                        
+                    />
+                    <input
+                        type="text"
+                        placeholder="Search by First Name"
+                        value={firstNameFilter}
+                        className={styles.shkfilterSection4}
+                        onChange={(e) => setFirstNameFilter(e.target.value)}
+                        
+                    />
+                </div>
+
                 <table className={styles.shakeekaUserTables}>
                     <thead>
                         <tr>
@@ -187,7 +368,7 @@ const UserTable = ({ userRole }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {users.map((user) => (
+                    {filteredUsers.map((user)  => (
                             <tr key={user._id}>
                                 <td>
                                     <img
@@ -221,6 +402,13 @@ const UserTable = ({ userRole }) => {
                         ))}
                     </tbody>
                 </table>
+
+                {/* Generate Report Button */}
+                <div className={styles.shkgenerateReportContainer}>
+                    <button onClick={generatePDF} className={styles.shkgenerateReportButton}>
+                        Generate Report
+                    </button>
+                </div>
 
                 {showForm && (
                     <div className={styles.modalBackground}>

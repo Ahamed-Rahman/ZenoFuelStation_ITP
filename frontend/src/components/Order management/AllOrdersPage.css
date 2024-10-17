@@ -1,83 +1,115 @@
 .Dan-search-bar{
     
-    width: 300px;
-    
+  width: 300px;
+  
 
-    margin-bottom: 20px;
-    font-size: 16px;
-    box-sizing: border-box;
+  margin-bottom: 20px;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
 
-.DanSearch {
-    padding: 5px;
-    width: 200px;
-    border: 1px solid #262832;
-    border-radius: 10px;
-    margin-bottom: -5px;
-    font-size: 14px;
-    box-sizing: border-box;
-    margin-left: 110px;
-  }
-
-.DanBtn {
+.DanStatusFilter {
+  padding: 5px;
+  width: 200px;
+  border: 1px solid #262832;
+  border-radius: 10px;
+  margin-bottom: -5px;
+  font-size: 14px;
+  box-sizing: border-box;
+  margin-left: 110px;
   display: flex;
-  gap: 10px;
+}
+
+.DanSearch{
+  padding: 5px;
+  width: 200px;
+  border: 1px solid #262832;
+  border-radius: 10px;
+ 
+  font-size: 14px;
+  box-sizing: border-box;
+  margin-left: 330px;
+ 
+ 
+
+}
+.DanBtn {
+display: flex;
+gap: 10px;
 }
 
 /* Edit Button */
 .DananjayaEdit {
-    background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+  background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
+color: white;
+border: none;
+border-radius: 5px;
+padding: 8px 12px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.Dananjayagenerate {
+  background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
   color: white;
   border: none;
   border-radius: 5px;
   padding: 8px 12px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-left: 980px;
+  margin-top: 12px;
 }
 
-.Dananjayagenerate {
-    background: linear-gradient(45deg, #081a70, #1e61bf, #266cb3, #26aee9);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 12px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-left: 980px;
-    margin-top: 12px;
-  }
-
 .DananjayaEdit:hover {
-  background-color: #0056b3;
+background-color: #0056b3;
 }
 
 /* Delete Button */
 .DananjayaDelete {
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 12px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+background-color: #dc3545;
+color: white;
+border: none;
+border-radius: 5px;
+padding: 8px 12px;
+cursor: pointer;
+transition: background-color 0.3s ease;
 }
 
 .DananjayaDelete:hover {
-  background-color: #c82333;
+background-color: #c82333;
 }
 
 /* Save Button */
 .DanSave {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 12px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+background-color: #28a745;
+color: white;
+border: none;
+border-radius: 5px;
+padding: 8px 12px;
+cursor: pointer;
+transition: background-color 0.3s ease;
 }
 
 .DanBtn button:hover {
-  background-color: #218838;
+background-color: #218838;
+}
+
+.Dan-search-bar {
+display: flex; /* Align items in a row */
+align-items: center; /* Center vertically */
+gap: -15px; /* Add some space between the input and dropdown */
+}
+
+.DanSearch {
+padding: 5px;
+font-size: 13px;
+margin-left: 110px;
+}
+
+.DanStatusFilter {
+padding: 5px;
+font-size: 13px;
+margin-left: 20px;
 }

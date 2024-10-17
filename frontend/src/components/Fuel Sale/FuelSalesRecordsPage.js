@@ -11,6 +11,9 @@ const FuelSalesRecordPage = () => {
   const [salesRecords, setSalesRecords] = useState([]);
   const [searchDate, setSearchDate] = useState(''); // State to store the search date
   const token = localStorage.getItem('token');
+  const [searchTerm, setSearchTerm] = useState('');
+
+  
 
   useEffect(() => {
     const fetchSalesRecords = async () => {
@@ -34,11 +37,11 @@ const FuelSalesRecordPage = () => {
 
   // Function to filter records by Sale Date
   const filteredRecords = salesRecords.filter((record) => {
-    if (!searchDate) return true; // If no search date is provided, return all records
-    const saleDate = new Date(record.saleDate).toISOString().split('T')[0]; // Format the sale date
-    return saleDate === searchDate; // Match sale date with the search date
+    const matchesDate = searchDate ? new Date(record.saleDate).toISOString().split('T')[0] === searchDate : true;
+    const matchesSearchTerm = record.fuelType.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesDate && matchesSearchTerm;
   });
-
+  
   // Function to generate PDF report
   // Function to generate PDF report
   const generatePDF = () => {
@@ -126,13 +129,20 @@ const FuelSalesRecordPage = () => {
           </div>
 
           {/* Search filter by Sale Date */}
-          <div style={{ marginBottom: '20px' }}>
+          <div style={{ marginBottom: '20px', display: 'flex', gap: '10px', justifyContent: 'center', marginLeft:'-470px'}}>
+           <input
+           type="text"
+           placeholder="Search by Fuel Type"
+           value={searchTerm}
+           onChange={(e) => setSearchTerm(e.target.value)}
+           style={{ marginLeft: '-10px', marginBottom: '20px', padding: '6px', borderRadius: '8px', border: '1px solid #000' }}
+  />
             <input
               type="date"
               id="searchDate"
               value={searchDate}
               onChange={(e) => setSearchDate(e.target.value)}
-              style={{ marginLeft: '350px', marginBottom: '20px', padding: '6px', borderRadius: '8px', border: '1px solid #ccc' }}
+              style={{ marginLeft: '10px', marginBottom: '20px', padding: '6px', borderRadius: '8px', border: '1px solid #000' }}
             />
           </div>
 

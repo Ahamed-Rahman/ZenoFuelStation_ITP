@@ -11,6 +11,10 @@ const OrderTablePage = () => {
     const [orders, setOrders] = useState([]);
     const [editOrderId, setEditOrderId] = useState(null);
     const [editQuantity, setEditQuantity] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
+const [statusFilter, setStatusFilter] = useState(''); // Add this state
+
+
 
     // Get the token from localStorage
     const token = localStorage.getItem('token');
@@ -175,11 +179,40 @@ const OrderTablePage = () => {
         doc.save('orders_report.pdf');
     };
 
+    const filteredOrders = orders.filter((order) => {
+        const matchesSearch = order.itemName.toLowerCase().includes(searchTerm.toLowerCase());
+        const matchesStatus = statusFilter ? order.status === statusFilter : true; // Check if status matches or if no status is selected
+        return matchesSearch && matchesStatus;
+    });
+    
+    
+
     return (
         <SidebarOrder>
             <div className="place-new-order-page">
                 <h2 className="order-management-title">All Shop Orders</h2>
                 
+                <div className="Dan-search-bar">
+  <input
+    type="text"
+    className="DanSearch"
+    placeholder="Search by Item Name"
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+  />
+
+  {/* Dropdown for status filter */}
+  <select
+    className="DanStatusFilter"
+    value={statusFilter}
+    onChange={(e) => setStatusFilter(e.target.value)}
+  >
+    <option value="">All Statuses</option>
+    <option value="Accepted">Accepted</option>
+    <option value="Pending">Pending</option>
+  </select>
+</div>
+
                 <table className="place-new-order-page__table">
                     <thead>
                         <tr>
@@ -193,7 +226,7 @@ const OrderTablePage = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {orders.map((order, index) => (
+                    {filteredOrders.map((order, index) => (
                             <tr key={order._id}>
                                 <td>{index + 1}</td>
                                 <td>{order.itemName}</td>

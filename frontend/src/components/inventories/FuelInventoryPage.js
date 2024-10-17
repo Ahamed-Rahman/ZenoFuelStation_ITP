@@ -11,6 +11,8 @@ import logoImage from '../../assets/images/logo.png';
 
 const FuelInventoryPage = ({ isManager }) => {
   const [items, setItems] = useState([]);
+  const [showLowStock, setShowLowStock] = useState(false); // New state for low stock filter
+
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [dateFilter, setDateFilter] = useState(''); // New state for date filter
@@ -208,6 +210,8 @@ const generatePDF = () => {
   const filteredItems = items.filter(item => {
     const matchesSearch = item.itemName.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesDate = dateFilter ? formatDate(item.dateAdded) === dateFilter : true;
+    const matchesLowStock = showLowStock ? item.available <= lowStockThreshold : true;
+  return matchesSearch && matchesDate && matchesLowStock;
     return matchesSearch && matchesDate;
   });
 
@@ -240,6 +244,18 @@ const generatePDF = () => {
                 onChange={(e) => setDateFilter(e.target.value)}
                 placeholder="Filter by Date Added"
               />
+
+               {/* Add Low Stock Filter Toggle */}
+               <label className={styles.AhamedSearchLabel}>
+  <input
+    type="checkbox"
+    checked={showLowStock}
+    className={styles.AhamedSearch1}
+    onChange={(e) => setShowLowStock(e.target.checked)}
+  />
+  Show Low Stock Only
+</label>
+
             </div>
             
 

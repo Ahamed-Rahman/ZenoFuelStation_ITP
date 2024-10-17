@@ -4,6 +4,8 @@ import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import { useNavigate } from 'react-router-dom';
 import './viewBill.css';
+import logoImage from '../../assets/images/logo.png'; // Adjust the path as needed
+
 
 const BillPage = () => {
     const navigate = useNavigate();
@@ -164,24 +166,81 @@ const BillPage = () => {
     
     const downloadBill = () => {
         const doc = new jsPDF();
-        doc.text('Sales Bill', 14, 16);
-        
-        const tableData = sales.map(sale => [sale.itemName, sale.quantity, sale.unitPrice]);
+        const pageWidth = doc.internal.pageSize.getWidth();
+        const margin = 20;
+    
+        // Add the logo in the top left corner
+        const logoSize = 30;
+        const logoImageSrc = logoImage; // Ensure this points to the correct path of your logo
+        doc.addImage(logoImageSrc, 'PNG', margin, margin, logoSize, logoSize);
+    
+        // Add the title below the logo
+        doc.setFontSize(16);
+        doc.setFont('Helvetica', 'bold');
+        doc.text('Zeno Shop Bill', margin + 70, margin + 20); // Adjust the position for the title
+    
+        // Define the table data for the sales
+        const tableData = sales.map(sale => [
+            sale.itemName, 
+            sale.quantity, 
+            `Rs. ${sale.unitPrice}`, 
+            `Rs. ${sale.quantity * sale.unitPrice}`
+        ]);
+    
+        // Add the table with headers
         doc.autoTable({
-            head: [['Item Name', 'Quantity', 'Unit Price']],
+            head: [['Item Name', 'Quantity', 'Unit Price', 'Total Price']],
             body: tableData,
+            startY: margin + 40, // Adjust the starting Y position to leave space for the logo and title
+            theme: 'grid',
+            styles: {
+                font: 'Helvetica',
+                fontSize: 10,
+                textColor: [40, 40, 40],
+                lineColor: [216, 216, 216],
+                lineWidth: 0.1,
+                cellPadding: 4, // Adds padding for better readability
+            },
+            headStyles: {
+                fillColor: [40, 116, 166],
+                textColor: [255, 255, 255],
+                fontStyle: 'bold',
+                halign: 'center', // Center-align headers
+            },
+            bodyStyles: {
+                fillColor: [245, 245, 245],
+                valign: 'middle',
+                halign: 'center', // Center-align text in the body
+            },
+            alternateRowStyles: {
+                fillColor: [255, 255, 255],
+            },
         });
-
-        doc.text(`Total: ${totalPrice} Rs`, 14, doc.lastAutoTable.finalY + 10);
-        
+    
+        // Get the position for the next text block
+        let lastY = doc.autoTable.previous.finalY || 40;
+    
+        // Add the total price below the table
+        doc.setFontSize(12);
+        doc.setFont('Helvetica', 'normal');
+        doc.text(`Total Price: Rs. ${totalPrice}`, margin, lastY + 10);
+    
         // Include discounted amount and discounted price if applicable
         if (discountedAmount > 0) {
-            doc.text(`Discount Amount: ${discountedAmount} Rs`, 14, doc.lastAutoTable.finalY + 20);
-            doc.text(`Discounted Price: ${discountedPrice} Rs`, 14, doc.lastAutoTable.finalY + 30);
+            doc.text(`Discount Amount: Rs. ${discountedAmount}`, margin, lastY + 20);
+            doc.text(`Discounted Price: Rs. ${discountedPrice}`, margin, lastY + 30);
         }
-
-        doc.save('bill.pdf');
+    
+        // Add a thank-you message at the bottom
+        const thankYouMessage = "Thank you for your purchase!";
+        const textWidth = doc.getTextWidth(thankYouMessage);
+        const textXPosition = (pageWidth - textWidth) / 2;
+        doc.text(thankYouMessage, textXPosition, doc.lastAutoTable.finalY + 50);
+    
+        // Save the PDF with a meaningful name
+        doc.save('sales_bill.pdf');
     };
+    
 
     const handleViewOrders = async () => {
         try {
@@ -238,7 +297,7 @@ const BillPage = () => {
                        
                     </label>
                     <div className="seshanTotal" >Total Price: {totalPrice} Rs</div>
-                    {discountedPrice > 0 && <div>Discounted Price: {discountedPrice} Rs</div>}
+                    {discountedPrice > 0 && <div className="seshanTotal1">Discounted Price: {discountedPrice} Rs</div>}
 
                     <div>
                         <label > <div className="seshanCode">Promo Code:</div>

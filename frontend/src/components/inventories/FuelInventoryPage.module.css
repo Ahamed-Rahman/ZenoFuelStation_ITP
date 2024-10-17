@@ -384,3 +384,16 @@ margin-right: 130px;
   height: 400px;    /* Adjust as needed */
 }
 
+.AhamedSearch1{
+  margin-left: 20px;
+  margin-top: 8px;
+  width: 18px;
+  height: 15px;
+}
+
+.AhamedSearchLabel {
+  display: flex;
+  align-items: center; /* Aligns items vertically in the center */
+  gap: 5px; /* Adds space between the checkbox and the label text */
+  white-space: nowrap; /* Prevents wrapping of the label text */
+}
