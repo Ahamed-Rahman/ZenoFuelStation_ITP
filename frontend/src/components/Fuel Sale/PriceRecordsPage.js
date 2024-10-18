@@ -164,7 +164,7 @@ const PriceRecordsPage = () => {
       {
         label: 'Total Price',
         data: priceRecords.map((record) => record.totalPrice),
-        backgroundColor: 'rgba(78, 192, 192, 0.3)', // Light blue
+        backgroundColor: 'rgba(78, 192, 192, 0.4)', // Light blue
         borderColor: '#4BC0C0',
         borderWidth: 2,
         hoverBackgroundColor: 'rgba(255, 99, 132, 0.8)', // Pink for hover
