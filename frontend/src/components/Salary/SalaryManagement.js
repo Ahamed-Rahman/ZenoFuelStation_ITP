@@ -82,7 +82,7 @@ const SalaryManagement = () => {
       text: 'This action cannot be undone.',
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Yes, delete it!',
+      confirmButtonText: 'Yes, sure delete it!',
     }).then(async (result) => {
       if (result.isConfirmed) {
         const token = localStorage.getItem('token');
