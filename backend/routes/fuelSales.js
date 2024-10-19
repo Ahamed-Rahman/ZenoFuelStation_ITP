@@ -178,36 +178,7 @@ router.delete('/price-records/:id', async (req, res) => {
 
 //update route
 router.put('/price-records/:id', async (req, res) => {
-    const { id } = req.params;
-    const { fuelType,  unitPrice } = req.body;
-
-    if (!fuelType || typeof unitPrice !== 'number' || unitPrice < 0) {
-        return res.status(400).json({ message: 'Invalid input data' });
-    }
-
-
-    try {
-        const updatedSale = await Sale.findByIdAndUpdate(
-            id,
-            { fuelType, unitPrice }, // Update fields
-            { new: true } // Return the updated document
-        );
-
-        if (!updatedSale) {
-            return res.status(404).json({ message: 'Fuel sale not found' });
-        }
-
-        res.status(200).json({ message: 'Fuel sale updated successfully', sale: updatedSale });
-    } catch (err) {
-        console.error('Error updating fuel sale record:', err);
-        res.status(500).json({ message: 'Server error', error: err.message });
-    }
-});
-
-
-// Update route for price records
-router.put('/price-records/:id', async (req, res) => {
-    const { fuelType, unitPrice, litres } = req.body;
+    const { fuelType, unitPrice, litres, totalPrice } = req.body;
 
     if (!fuelType || typeof unitPrice !== 'number' || unitPrice < 0) {
         return res.status(400).json({ message: 'Invalid input data' });
@@ -216,7 +187,7 @@ router.put('/price-records/:id', async (req, res) => {
     try {
         const updatedSale = await Sale.findByIdAndUpdate(
             req.params.id,
-            { fuelType, unitPrice, litres }, // Update fields
+            { fuelType, unitPrice, litres, totalPrice }, // Update fields
             { new: true } // Return the updated document
         );
 
@@ -230,5 +201,33 @@ router.put('/price-records/:id', async (req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 });
+
+
+
+// Update route for price records
+//router.put('/price-records/:id', async (req, res) => {
+ //   const { fuelType, unitPrice, litres } = req.body;
+
+  //  if (!fuelType || typeof unitPrice !== 'number' || unitPrice < 0) {
+  //      return res.status(400).json({ message: 'Invalid input data' });
+  //  }
+
+  //  try {
+      //  const updatedSale = await Sale.findByIdAndUpdate(
+       //     req.params.id,
+       //     { fuelType, unitPrice, litres }, // Update fields
+       //     { new: true } // Return the updated document
+       // );
+
+      //  if (!updatedSale) {
+      //      return res.status(404).json({ message: 'Price record not found' });
+       // }
+
+      //  res.status(200).json({ message: 'Price record updated successfully', sale: updatedSale });
+   // } catch (err) {
+        //console.error('Error updating price record:', err);
+       // res.status(500).json({ message: 'Server error' });
+    //}
+//});
 
 module.exports = router;
