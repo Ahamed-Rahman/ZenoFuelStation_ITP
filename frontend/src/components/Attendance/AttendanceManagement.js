@@ -107,7 +107,7 @@ const AttendanceManagement = () => {
           setError(data.message || 'Error marking attendance.');
           Swal.fire(
             'Error!',
-            data.message || 'Error marking attendance.',
+            data.message || 'Error marking attendance,Try again.',
             'error'
           );
         }

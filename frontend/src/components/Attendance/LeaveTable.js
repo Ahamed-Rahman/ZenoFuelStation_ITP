@@ -14,7 +14,6 @@ const LeaveTable = ({ userType = 'Worker' }) => {
     "Medical Leave",
     "Casual Leave",
     "Short Leave",
-    "Other Leave"
   ]; // Leave types array
 
   useEffect(() => {

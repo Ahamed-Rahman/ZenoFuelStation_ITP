@@ -62,7 +62,7 @@ const ManagerAttendanceTable = () => {
           const newRecords = attendanceRecords.filter(record => record._id !== id);
           setAttendanceRecords(newRecords);
           setFilteredRecords(newRecords); // Update filtered records after deletion
-          Swal.fire('Deleted!', 'The record has been deleted.', 'success');
+          Swal.fire('Deleted!', 'The record has been deleted successfully.', 'success');
         } else {
           Swal.fire('Error!', 'There was an issue deleting the record.', 'error');
         }
